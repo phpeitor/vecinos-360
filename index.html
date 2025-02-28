@@ -1,0 +1,1289 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="./css/all.css">
+<link rel="stylesheet" href="./css/general.css?version=09242021">  
+<link rel="stylesheet" href="./css/kashio-iframe.css?version=07112023"/>  
+<link href="./css/css.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="./css/css.css" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="kashio_ico.ico"/>
+<title>Adminio - Vecinos 360</title>
+<script>
+	function copy(){
+		var copyText = document.getElementById("copyText");
+		var textArea = document.createElement("textarea");
+    	textArea.value = copyText.textContent;
+    	document.body.appendChild(textArea);
+		textArea.select();
+    	document.execCommand("Copy");
+    	textArea.remove();
+	}
+
+</script>
+<style>
+	.copyIconImg{
+		width: 24px;
+    	height: 24px;
+		margin-top: 4px;
+		cursor: pointer;
+	}
+	#kashio-flex {
+		flex-direction: row;
+   		 display: inline-flex;
+	}
+	#kashio-flex .icon {
+		margin-left: 15px;
+	}
+	@media(min-width:575px) and (max-width: 767px) {
+	#kashio-flex {
+    flex-direction: row;
+    display: block;
+	}
+	}
+	@media(min-width:1600px) {
+		.copyIconImg{
+		width: 25px;
+		height: 25px;
+		filter: invert(1);
+		margin-top: 8px;
+	}
+	}
+</style>
+</head>
+<body>
+
+	  
+<div class="container py-2">
+	
+	<section id="detalles" class="">		
+
+		<div class="container-fluid bg-white display-7 text-center logo-description-container">
+			<img src="./img/LogoKashioPNG.png" height="30" alt="" class="mb-2">
+            <center class="slogan">Paga fácil, seguro y con total comodidad</center>
+		</div>
+		
+		<div class="row text-center m-0 k-info-service">
+			
+			<div class="col-6  p-3">
+				<small class="m-0">Empresa recaudadora</small>
+				<p class="m-0">Vecinos 360</p>
+			</div>
+		
+			<div class="col-6 p-3">
+				<small class="m-0">Nombre del servicio</small>
+				<p class="m-0 kashio_service">360pay</p>
+			</div>
+			
+		</div>		
+
+		<div class="row text-white text-center m-0 content_payment">
+			
+			<div class="col-12 col-sm-4 p-2 payment-code-container">
+				<p class="m-0 payment-code-label">Tu código de pago es:</p>
+				<div id="kashio-flex" class=" mt-1">
+					<div class="text">
+						<p class="display-4 bold m-0 doc" id="copyText"></p>
+					</div>
+					<div class="icon">
+						<a tabindex="0" id="kashiopopover" onclick="copy()" data-placement="top" data-content="Copiado a portapapeles" data-original-title="" title="">
+							<img src="./img/copy.svg" alt="Copy Img" class="copyIconImg">
+						</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-12 col-sm-4 data-border p-2 total-amount-container">
+				<p class="m-0 total-amount-label">Tu monto a pagar:</p>
+				<div>
+					<p class="display-4 bold m-0 symbol-amount mt-1"></p>
+					<p class="display-4 bold m-0 amount mt-1"></p>
+				</div>
+			</div>
+		
+			<div class="col-12 col-sm-4 p-2 time_expire expiration-date-container">
+				<p class="m-0 expiration-date-label">Vence en:</p>
+				
+				<div class="d-flex justify-content-center countdown mt-1">
+
+					<div class="days">
+						<div class="show_days">
+							<p id="dias" class="display-4 bold m-0"></p>
+						</div>
+						<div class="label_days" style="vertical-align: text-bottom">
+							<p>días</p>
+						</div>
+					</div>
+
+					<div class="hours">
+						<div class="">
+							<p id="horas" class="display-4 bold m-0"></p>
+						</div>
+						
+						<div class=" display-4 bold p-0">:</div>
+
+						<div class="" >
+							<p id="minutos" class="display-4 bold m-0"></p>
+						</div>
+		
+						<div class=" display-4 bold p-0">:</div>
+
+						<div class="">
+							<p id="segundos" class="display-4 bold m-0"></p>
+						</div>
+						<div class="label-hours" style="bottom: 0">
+							<p class="m-0">horas</p>
+						</div>
+					</div>
+            
+					
+				</div>
+				
+				
+			</div>
+	
+		</div>
+		
+	</section>	
+
+		<section class="plataformas ">
+		<div class="p-2 text-center instruction-one">
+			Conoce las instrucciones de pago de tus bancos, bodegas y agentes favoritos
+		</div>
+
+		<div class="row m-0 py-2 px-0 logos-container">
+
+			<div class="col-logo col-6 col-sm-1">
+				<button id="btn-bcp" class="btn-logo active"><img src="./img/logos/bcp.png?version=09242021"
+				alt="bcp"></button>
+			</div>
+
+			<div class="col-logo col-6 col-sm-1">
+				<button id="btn-yape" class="btn-logo "><img src="./img/logos/yape.png" alt="yape"></button>
+			</div>
+
+		  	<div class="col-logo col-6 col-sm-1">
+				<button id="btn-bbva" class="btn-logo"><img src="./img/logos/bbva.png?version=09242021" alt="bbva"></button>
+			</div>
+
+		  	<div class="col-logo col-6 col-sm-1">
+				<button id="btn-interbank" class="btn-logo"><img src="./img/logos/interbank.png?version=09242021" alt="interbank"></button>
+			</div>
+
+<!--		  	<div class="col-logo col-6 col-sm-1 content-logo-scotiabank">-->
+<!--				<button id="btn-scotiabank" class="btn-logo"><img src="./img/logos/scotiabank.png?version=09242021" alt="scotiabank"></button>-->
+<!--			</div>-->
+			<!--
+			<div class="col-logo col-6 col-sm-1">
+				<button id="btn-rappibank" class="btn-logo"><img src="./img/logos/rappibank-logo 1.png?version=09242021" alt="rappibank"></button>
+			</div>
+			-->
+		 	<div class="col-logo col-6 col-sm-1">
+				<button id="btn-kasnet" class="btn-logo"><img src="./img/logos/kasnet.png?version=09242021" alt="kasnet"></button>
+			</div>
+			<!--
+            <div class="col-logo col-6 col-sm-1">
+				<button id="btn-tambo" class="btn-logo"><img src="./img/logos/tambo.png?version=09242021" alt="tambo"></button>
+			</div>
+			-->
+			<div class="col-logo col-6 col-sm-1">
+				<button id="btn-caja-arequipa" class="btn-logo btn-logo-caja-arequipa"><img src="./img/logos/caja-arequipa.svg" alt="caja-arequipa"></button>
+			</div>
+			<div class="col-logo col-6 col-sm-1">
+                <button id="btn-caja-huancayo" class="btn-logo btn-logo-caja-huancayo"><img src="./img/logos/caja-huancayo.svg" alt="caja-huancayo"></button>
+            </div>
+	  	</div>
+		
+	</section><!-- plataformas -->	
+		
+	<section id="channels" class="" >
+
+		
+		<div class="instrucciones text-justify">		
+					
+			<!-- ##################################### INIT  BCP ####################################### -->	
+			<div id="instrucciones-bcp" class="">
+				<div class="instrucciones-titulo text-center bg-bcp text-white">
+					Pasos a seguir para pagar en <span><img src="./img/logos/bcp-inverse.png?version=09242021" alt=""></span>
+				</div>
+
+				<nav class="tabs">
+					<div class="nav nav-tabs nav-fill" id="nav-tab-1" role="tablist">
+						<a class="nav-item nav-link active" id="bcp-channel-1-tab" data-toggle="tab" href="#bcp-channel-1" role="tab" aria-controls="bcp-channel-1" aria-selected="true">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="smartphone-icon">
+								<path
+									d="M17 2H7C5.89543 2 5 2.89543 5 4V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V4C19 2.89543 18.1046 2 17 2Z"
+									stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M12 18H12.01" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round" />
+							</svg>
+							<p class="d-none d-sm-inline">Banca Móvil</p>					
+						</a>
+						<a class="nav-item nav-link" id="bcp-channel-2-tab" data-toggle="tab" href="#bcp-channel-2" role="tab" aria-controls="bcp-channel-2" aria-selected="false">
+							<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="monitor-icon">
+								<path
+									d="M20.125 3H4.125C3.02043 3 2.125 3.89543 2.125 5V15C2.125 16.1046 3.02043 17 4.125 17H20.125C21.2296 17 22.125 16.1046 22.125 15V5C22.125 3.89543 21.2296 3 20.125 3Z"
+									stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M8.125 21H16.125" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M12.125 17V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+							<p class="d-none d-sm-inline">Banca Web</p>
+						</a>
+						<a class="nav-item nav-link" id="bcp-channel-3-tab" data-toggle="tab" href="#bcp-channel-3" role="tab" aria-controls="bcp-channel-3" aria-selected="false">
+							<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="credit-card-icon">
+								<g clip-path="url(#clip0_368_2660)">
+									<path
+										d="M21.0942 2H4.65578C4.19691 2 3.79693 2.3123 3.68563 2.75746L2.18563 8.75746C2.02785 9.38861 2.50514 10 3.15571 10H3.875V20H21.875V10H22.5942C23.2448 10 23.7222 9.38861 23.5644 8.75746L22.0644 2.75746C21.9531 2.3123 21.5531 2 21.0942 2Z"
+										stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path
+										d="M22.875 10L21.8231 10C21.2308 10 20.6776 10.296 20.3491 10.7889V10.7889C19.6478 11.8408 18.1022 11.8408 17.4009 10.7889L17.375 10.75C17.1371 10.3932 16.6129 10.3932 16.375 10.75V10.75C15.6614 11.8204 14.0886 11.8204 13.375 10.75V10.75C13.1371 10.3932 12.6129 10.3932 12.375 10.75V10.75C11.6614 11.8204 10.0886 11.8204 9.375 10.75V10.75C9.13714 10.3932 8.61286 10.3932 8.375 10.75L8.34907 10.7889C7.64783 11.8408 6.10217 11.8408 5.40093 10.7889V10.7889C5.07236 10.296 4.51921 10 3.92686 10L3.875 10"
+										stroke="#C2C9D6" stroke-width="2" />
+								</g>
+								<defs>
+									<clipPath id="clip0_368_2660">
+										<rect width="24" height="24" fill="white" transform="translate(0.875)" />
+									</clipPath>
+								</defs>
+							</svg>
+							<p class="d-none d-sm-inline">Agentes y Bodegas</p>
+						</a>
+						<a class="nav-item nav-link" id="bcp-channel-4-tab" data-toggle="tab" href="#bcp-channel-4" role="tab" aria-controls="bcp-channel-4" aria-selected="false">
+							<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="home-icon">
+								<g clip-path="url(#clip0_368_2663)">
+									<path d="M12.375 1L1.875 9H22.875L12.375 1Z" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+									<path d="M3.875 21V9H20.875V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+									<path d="M7.875 21V9H16.875V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+									<path d="M1.875 22H22.875" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								</g>
+								<defs>
+									<clipPath id="clip0_368_2663">
+										<rect width="24" height="24" fill="white" transform="translate(0.125)" />
+									</clipPath>
+								</defs>
+							</svg>
+							<p class="d-none d-sm-inline">Agencias Bancarias</p>
+						</a>
+					</div>
+				</nav>
+
+				
+				<div id="nav-tabContent" class="tab-content p-3"  >
+					
+					<div class="tab-pane fade show active width-info" id="bcp-channel-1" role="tabpanel" aria-labelledby="nav-1-tab">
+						<h3 class="d-none">Banca Móvil</h3>
+						<div id="info-bcp" class="d-none padding-info">
+							<div class="frame">
+								<div class="div">
+								  <div class="badge"><div class="text">Nota importante</div></div>
+								  <p class="les-informamos-que">
+									<span class="text-wrapper">Les informamos que desde las</span>
+									<span class="span"> 11 p.m. del viernes 05 hasta las 8 a.m. del domingo 07 de enero</span>
+									<span class="text-wrapper">
+									  el BCP realizará  mantenimiento en sus sistema por lo cual no se podrá pagar o hacer uso del servicio.</span
+									>
+								  </p>
+								</div>
+							  </div>
+						</div>
+						<div id="info-bcp-before" class="d-none padding-info">
+							<div class="frame">
+								<div class="div">
+								  <div class="badge"><div class="text">Nota importante</div></div>
+								  <p class="les-informamos-que">
+									<span class="text-wrapper">Les informamos que actualmente el BCP se encuentra en mantenimiento </span>
+									<span class="span">hasta las 8 a.m. del domingo 07 de enero</span>
+								  </p>
+								</div>
+							  </div>
+						</div>
+						<ol id="info-bcp-text" class="" >
+							<li>Ingresa a la aplicación móvil del BCP, accede al menú principal y selecciona la opción <b>"Pagar Servicios".</b></li>
+							<li>Selecciona la opción <b>"Buscar en la sección".</b></li>
+							<li>Busca "360pay", elige e ingresa tu código de pago..</li>
+							<li>Selecciona la deuda a pagar, confirma y ¡Listo!</li>
+						</ol>
+					</div>
+
+				<div class="tab-pane fade width-info " id="bcp-channel-2" role="tabpanel" aria-labelledby="nav-2-tab">
+						
+						<h3 class="d-none">Banca Web</h3>
+						<div id="info-bcp1" class="d-none padding-info">
+							<div class="frame">
+								<div class="div">
+								  <div class="badge"><div class="text">Nota importante</div></div>
+								  <p class="les-informamos-que">
+									<span class="text-wrapper">Les informamos que desde las</span>
+									<span class="span"> 11 p.m. del viernes 05 hasta las 8 a.m. del domingo 07 de enero</span>
+									<span class="text-wrapper">
+									  el BCP realizará  mantenimiento en sus sistema por lo cual no se podrá pagar o hacer uso del servicio.</span
+									>
+								  </p>
+								</div>
+							  </div>
+						</div>
+						<div id="info-bcp-before1" class="d-none padding-info">
+							<div class="frame">
+								<div class="div">
+								  <div class="badge"><div class="text">Nota importante</div></div>
+								  <p class="les-informamos-que">
+									<span class="text-wrapper">Les informamos que actualmente el BCP se encuentra en mantenimiento </span>
+									<span class="span">hasta las 8 a.m. del domingo 07 de enero</span>
+								  </p>
+								</div>
+							  </div>
+						</div>
+						<ol id="info-bcp-text1" class="" >
+							<li>Ingresa a tu banca web BCP desde: https://www.viabcp.com</li>
+							<li>Ve al menú de "Pagos", y selecciona <b>"Pagar un servicio".</b></li>
+							<li>Busca "360pay", elige e ingresa tu código de pago..</li>
+							
+							<li>Selecciona la deuda a pagar, confirma y ¡Listo!</li>
+						</ol>
+					</div>
+
+					<div class="tab-pane fade width-info " id="bcp-channel-3" role="tabpanel" aria-labelledby="nav-3-tab">
+						<h3 class="d-none">Agentes</h3>
+						<div id="info-bcp2" class="d-none padding-info">
+							
+							<div class="frame">
+								<div class="div">
+								  <div class="badge"><div class="text">Nota importante</div></div>
+								  <p class="les-informamos-que">
+									<span class="text-wrapper">Les informamos que desde las</span>
+									<span class="span"> 11 p.m. del viernes 05 hasta las 8 a.m. del domingo 07 de enero</span>
+									<span class="text-wrapper">
+									  el BCP realizará  mantenimiento en sus sistema por lo cual no se podrá pagar o hacer uso del servicio.</span
+									>
+								  </p>
+								</div>
+							  </div>
+						</div>
+						<div id="info-bcp-before2" class="d-none padding-info">
+							<div class="frame">
+								<div class="div">
+								  <div class="badge"><div class="text">Nota importante</div></div>
+								  <p class="les-informamos-que">
+									<span class="text-wrapper">Les informamos que actualmente el BCP se encuentra en mantenimiento </span>
+									<span class="span">hasta las 8 a.m. del domingo 07 de enero</span>
+								  </p>
+								</div>
+							  </div>
+						</div>
+						<ol id="info-bcp-text2" class="" >
+							<li>Acércate a un agente del BCP e indica que deseas pagar al servicio de recaudación de Kashio Perú.</li>
+							<li>Indica el Código de Agente de Kashio: <strong>15813</strong>.</li>
+							<li>Indica tu código de pago.</li>
+							<li>Indica monto total, moneda a pagar y ¡Listo! </li>
+							<li>Recibe el voucher de pago de la operación.</li>
+						</ol>
+					</div>
+
+					<div class="tab-pane fade width-info" id="bcp-channel-4" role="tabpanel" aria-labelledby="nav-4-tab">
+						<h3 class="d-none">Ventanilla</h3>
+						<div id="info-bcp3" class="d-none padding-info">
+							<div class="frame">
+								<div class="div">
+								  <div class="badge"><div class="text">Nota importante</div></div>
+								  <p class="les-informamos-que">
+									<span class="text-wrapper">Les informamos que desde las</span>
+									<span class="span"> 11 p.m. del viernes 05 hasta las 8 a.m. del domingo 07 de enero</span>
+									<span class="text-wrapper">
+									  el BCP realizará  mantenimiento en sus sistema por lo cual no se podrá pagar o hacer uso del servicio.</span
+									>
+								  </p>
+								</div>
+							  </div>
+						</div>
+						<div id="info-bcp-before3" class="d-none padding-info">
+							<div class="frame">
+								<div class="div">
+								  <div class="badge"><div class="text">Nota importante</div></div>
+								  <p class="les-informamos-que">
+									<span class="text-wrapper">Les informamos que actualmente el BCP se encuentra en mantenimiento </span>
+									<span class="span">hasta las 8 a.m. del domingo 07 de enero</span>
+								  </p>
+								</div>
+							  </div>
+						</div>
+						<ol id="info-bcp-text3" class="" >
+							<li>Acércate a una oficina o agencia del BCP e indica que deseas pagar al servicio de recaudación de Kashio.</li>
+							<li>Elije el tipo de moneda a pagar y proporciona el número de tu DNI, RUC, teléfono o código único, según corresponda.</li>
+							<li>Elije la deuda que deseas pagar y listo. Recibe el voucher de pago de la operación.</li>						
+						</ol>
+					</div>
+
+				</div>
+				
+				<div class="bg-lightgray border-bluex p-2 extra-info">
+					<small>
+						(*) Pagos en ventanilla de los bancos BCP e Interbank tendrán un cargo por comisión bancaria de S/.3.60. <br>
+						Si tuviera algún problema con su pago vía Kashio, por favor escribir a  soporte@kashio.net			
+					</small>
+				</div>
+			</div>
+			<!-- ##################################### FIN BCP ####################################### -->
+
+			            <!-- ##################################### INIT YAPE ####################################### -->
+						<div id="instrucciones-yape" class="d-none">
+
+							<div class="instrucciones-titulo text-center bg-yape text-white">
+								Pasos a seguir para pagar en <span><img src="./img/logos/yape-inverse.png?version=09242021" alt=""></span>
+							</div>
+							<nav class="tabs">
+								<div class="nav nav-tabs nav-fill" id="nav-tab-1a" role="tablist">
+									<a class="nav-item nav-link active" id="bcp-channel-1-tab" data-toggle="tab" href="#bcp-channel-1" role="tab" aria-controls="bcp-channel-1" aria-selected="true">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="smartphone-icon">
+											<path
+												d="M17 2H7C5.89543 2 5 2.89543 5 4V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V4C19 2.89543 18.1046 2 17 2Z"
+												stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+											<path d="M12 18H12.01" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+										<p class="d-none d-sm-inline">Móvil</p>
+									</a>
+								</div>
+							</nav>
+		
+							<div id="nav-tabContent" class="tab-content p-3" >
+								<div class="tab-pane fade show active width-info " id="yape-channel-3" role="tabpanel" aria-labelledby="nav-3-tab">
+									<h3 class="d-none">Agentes</h3>
+									<div id="info-yape" class="d-none padding-info">
+										<div class="frame">
+											<div class="div">
+											  <div class="badge"><div class="text">Nota importante</div></div>
+											  <p class="les-informamos-que">
+												<span class="text-wrapper">Les informamos que desde las</span>
+												<span class="span"> 11 p.m. del viernes 05 hasta las 8 a.m. del domingo 07 de enero</span>
+												<span class="text-wrapper">
+												  el BCP realizará  mantenimiento en sus sistema por lo cual no se podrá pagar o hacer uso del servicio.</span
+												>
+											  </p>
+											</div>
+										  </div>
+									</div>
+									<div id="info-yape-before" class="d-none padding-info">
+										<div class="frame">
+											<div class="div">
+											  <div class="badge"><div class="text">Nota importante</div></div>
+											  <p class="les-informamos-que">
+												<span class="text-wrapper">Les informamos que actualmente Yape se encuentra en mantenimiento </span>
+												<span class="span">hasta las 8 a.m. del domingo 07 de enero</span>
+											  </p>
+											</div>
+										  </div>
+									</div>
+									<ol id="info-yape-text" class="" >
+										<li>En tu aplicativo <b>Yape</b>, ingresa a <b>Yapear Servicios</b>.</li>
+										<li>Ubica Kashio en la categoría <b>"Compras Online"</b>.</li>
+										<li>Coloca tu <b>código de pago</b> y yapea!</li>
+									</ol>
+								</div>
+		
+							</div>
+		
+						</div>
+			<!-- ##################################### FIN YAPE ####################################### -->
+
+			<!-- ############################## INIT BBVA ########################################## --> 
+				<div id="instrucciones-bbva" class="d-none"> 
+					
+					<div class="instrucciones-titulo text-center bg-bbva text-white">
+						Pasos a seguir para pagar en <span><img src="img/logos/bbva-inverse.png?version=09242021" alt=""></span>
+					</div>
+
+					<nav class="tabs">
+						<div class="nav nav-tabs nav-fill" id="nav-tab-1" role="tablist">
+							<a class="nav-item nav-link active" id="bbva-channel-1-tab" data-toggle="tab" href="#bbva-channel-1" role="tab" aria-controls="bbva-channel-1" aria-selected="true">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="smartphone-icon">
+									<path
+										d="M17 2H7C5.89543 2 5 2.89543 5 4V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V4C19 2.89543 18.1046 2 17 2Z"
+										stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M12 18H12.01" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								<p class="d-none d-sm-inline">Banca Móvil</p>						
+							</a>
+							<a class="nav-item nav-link" id="bbva-channel-2-tab" data-toggle="tab" href="#bbva-channel-2" role="tab" aria-controls="bbva-channel-2" aria-selected="false">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="monitor-icon">
+									<path
+										d="M20.125 3H4.125C3.02043 3 2.125 3.89543 2.125 5V15C2.125 16.1046 3.02043 17 4.125 17H20.125C21.2296 17 22.125 16.1046 22.125 15V5C22.125 3.89543 21.2296 3 20.125 3Z"
+										stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M8.125 21H16.125" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M12.125 17V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+								<p class="d-none d-sm-inline">Banca Web</p>
+							</a>
+							<a class="nav-item nav-link" id="bbva-channel-3-tab" data-toggle="tab" href="#bbva-channel-3" role="tab" aria-controls="bbva-channel-3" aria-selected="false">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="credit-card-icon">
+									<g clip-path="url(#clip0_368_2660)">
+										<path
+											d="M21.0942 2H4.65578C4.19691 2 3.79693 2.3123 3.68563 2.75746L2.18563 8.75746C2.02785 9.38861 2.50514 10 3.15571 10H3.875V20H21.875V10H22.5942C23.2448 10 23.7222 9.38861 23.5644 8.75746L22.0644 2.75746C21.9531 2.3123 21.5531 2 21.0942 2Z"
+											stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										<path
+											d="M22.875 10L21.8231 10C21.2308 10 20.6776 10.296 20.3491 10.7889V10.7889C19.6478 11.8408 18.1022 11.8408 17.4009 10.7889L17.375 10.75C17.1371 10.3932 16.6129 10.3932 16.375 10.75V10.75C15.6614 11.8204 14.0886 11.8204 13.375 10.75V10.75C13.1371 10.3932 12.6129 10.3932 12.375 10.75V10.75C11.6614 11.8204 10.0886 11.8204 9.375 10.75V10.75C9.13714 10.3932 8.61286 10.3932 8.375 10.75L8.34907 10.7889C7.64783 11.8408 6.10217 11.8408 5.40093 10.7889V10.7889C5.07236 10.296 4.51921 10 3.92686 10L3.875 10"
+											stroke="#C2C9D6" stroke-width="2" />
+									</g>
+									<defs>
+										<clipPath id="clip0_368_2660">
+											<rect width="24" height="24" fill="white" transform="translate(0.875)" />
+										</clipPath>
+									</defs>
+								</svg>
+								<p class="d-none d-sm-inline">Agentes y Bodegas</p>
+							</a>
+							<a class="nav-item nav-link" id="bbva-channel-4-tab" data-toggle="tab" href="#bbva-channel-4" role="tab" aria-controls="bbva-channel-4" aria-selected="false">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="home-icon">
+									<g clip-path="url(#clip0_368_2663)">
+										<path d="M12.375 1L1.875 9H22.875L12.375 1Z" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+											stroke-linejoin="round" />
+										<path d="M3.875 21V9H20.875V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+											stroke-linejoin="round" />
+										<path d="M7.875 21V9H16.875V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+											stroke-linejoin="round" />
+										<path d="M1.875 22H22.875" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</g>
+									<defs>
+										<clipPath id="clip0_368_2663">
+											<rect width="24" height="24" fill="white" transform="translate(0.125)" />
+										</clipPath>
+									</defs>
+								</svg>
+								<p class="d-none d-sm-inline">Agencias Bancarias</p>
+							</a>
+						</div>
+				  	</nav>
+
+					<div id="nav-tabContent" class="tab-content p-3" >
+
+						<div class="tab-pane fade show active" id="bbva-channel-1" role="tabpanel" aria-labelledby="nav-1-tab">
+							<h3 class="d-none">Banca Móvil</h3>
+							<ol>
+								<li>Ingresa a la aplicación móvil del BBVA, accede al menú principal y selecciona tu cuenta bancaria.</li>
+								<li>Elige la opción <b>“Pagar servicio”</b> y selecciona <b>"Agregar servicio a pagar".</b></li>
+                                <li>Busca "360pay", elige e ingresa tu código de pago..</li>
+							
+                                <li>Selecciona la deuda a pagar, confirma y ¡Listo!</li>
+							</ol>
+						</div>
+
+					  <div class="tab-pane fade" id="bbva-channel-2" role="tabpanel" aria-labelledby="nav-2-tab">
+							<h3 class="d-none">Banca Web</h3>
+							<ol>
+								<li>Ingresa a tu banca web BBVA desde: https://www.bbva.pe</li>
+								<li>Ve a tu cuenta, pulsa el botón "Quiero" y selecciona la opción <b>"Pagar servicio".</b></li>
+                                <li>Selecciona la opción <b>"Instituciones y empresas"</b> y pulsa la opción <b>"Nombre".</b></li>
+                                <li>Busca "Kashio Perú", elige Kashio Perú Soles o Dólares, pulsa siguiente e ingresa tu código de pago</li>
+                                <li>Selecciona la deuda a pagar, confirma y ¡Listo!!</li>
+								
+							</ol>
+						</div>
+
+						<div class="tab-pane fade" id="bbva-channel-3" role="tabpanel" aria-labelledby="nav-3-tab">
+						  <h3 class="d-none">Agentes</h3>
+							<ol>
+								<li>Acércate a un agente del BBVA e indica que deseas pagar al servicio de recaudación de Kashio Perú.</li>
+								<li>Indica el Código de Agente de Kashio:</li>
+
+										<ul>Pago en Soles: <strong>  11140 </strong></ul>
+										<ul>Pago en Dólares:<strong> 11141 </strong></ul>
+
+								<li>Indica tu código de pago.</li>
+                                <li>Indica monto total, moneda a pagar y ¡Listo! </li>
+								<li>Recibe el voucher de pago de la operación.</li>
+							</ol>
+						</div>
+
+						<div class="tab-pane fade" id="bbva-channel-4" role="tabpanel" aria-labelledby="nav-4-tab">
+							<h3 class="d-none">Agencias Bancarias</h3>
+							<ol>
+								<li>Acércate a una oficina o agencia del BBVA e indica que deseas pagar al servicio de recaudación de Kashio.</li>
+								<li>Elije el tipo de moneda en la que quieres pagar.</li>
+								<li>Proporciona tu número de DNI, RUC, teléfono o código único según corresponda y elije la deuda que quieres pagar.</li>
+								<li>Recibe el voucher de pago de la operación.</li>
+							</ol>
+						</div>
+
+					</div>
+				</div>
+			<!-- ##################################### FIN BBVA ####################################### --> 
+
+			<!-- ##################################### INIT IBK ####################################### --> 
+				<div id="instrucciones-interbank" class="d-none"> 
+					<div class="instrucciones-titulo text-center bg-interbank text-white">
+						Pasos a seguir para pagar en <span><img src="img/logos/interbank-inverse.png?version=09242021" alt=""></span>
+					</div>
+
+					<nav class="tabs">
+						<div class="nav nav-tabs nav-fill" id="nav-tab-1" role="tablist">
+							<a class="nav-item nav-link active" id="interbank-channel-1-tab" data-toggle="tab" href="#interbank-channel-1" role="tab" aria-controls="interbank-channel-1" aria-selected="true">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="smartphone-icon">
+									<path
+										d="M17 2H7C5.89543 2 5 2.89543 5 4V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V4C19 2.89543 18.1046 2 17 2Z"
+										stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M12 18H12.01" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								<p class="d-none d-sm-inline">Banca Móvil</p>						
+							</a>
+							<a class="nav-item nav-link" id="interbank-channel-2-tab" data-toggle="tab" href="#interbank-channel-2" role="tab" aria-controls="interbank-channel-2" aria-selected="false">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="monitor-icon">
+									<path
+										d="M20.125 3H4.125C3.02043 3 2.125 3.89543 2.125 5V15C2.125 16.1046 3.02043 17 4.125 17H20.125C21.2296 17 22.125 16.1046 22.125 15V5C22.125 3.89543 21.2296 3 20.125 3Z"
+										stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M8.125 21H16.125" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M12.125 17V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+								<p class="d-none d-sm-inline">Banca Web</p>
+							</a>
+							<a class="nav-item nav-link" id="interbank-channel-3-tab" data-toggle="tab" href="#interbank-channel-3" role="tab" aria-controls="interbank-channel-3" aria-selected="false">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="credit-card-icon">
+									<g clip-path="url(#clip0_368_2660)">
+										<path
+											d="M21.0942 2H4.65578C4.19691 2 3.79693 2.3123 3.68563 2.75746L2.18563 8.75746C2.02785 9.38861 2.50514 10 3.15571 10H3.875V20H21.875V10H22.5942C23.2448 10 23.7222 9.38861 23.5644 8.75746L22.0644 2.75746C21.9531 2.3123 21.5531 2 21.0942 2Z"
+											stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										<path
+											d="M22.875 10L21.8231 10C21.2308 10 20.6776 10.296 20.3491 10.7889V10.7889C19.6478 11.8408 18.1022 11.8408 17.4009 10.7889L17.375 10.75C17.1371 10.3932 16.6129 10.3932 16.375 10.75V10.75C15.6614 11.8204 14.0886 11.8204 13.375 10.75V10.75C13.1371 10.3932 12.6129 10.3932 12.375 10.75V10.75C11.6614 11.8204 10.0886 11.8204 9.375 10.75V10.75C9.13714 10.3932 8.61286 10.3932 8.375 10.75L8.34907 10.7889C7.64783 11.8408 6.10217 11.8408 5.40093 10.7889V10.7889C5.07236 10.296 4.51921 10 3.92686 10L3.875 10"
+											stroke="#C2C9D6" stroke-width="2" />
+									</g>
+									<defs>
+										<clipPath id="clip0_368_2660">
+											<rect width="24" height="24" fill="white" transform="translate(0.875)" />
+										</clipPath>
+									</defs>
+								</svg>
+								<p class="d-none d-sm-inline">Agentes y Bodegas</p>
+							</a>
+							<a class="nav-item nav-link" id="interbank-channel-4-tab" data-toggle="tab" href="#interbank-channel-4" role="tab" aria-controls="interbank-channel-4" aria-selected="false">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="home-icon">
+									<g clip-path="url(#clip0_368_2663)">
+										<path d="M12.375 1L1.875 9H22.875L12.375 1Z" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+											stroke-linejoin="round" />
+										<path d="M3.875 21V9H20.875V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+											stroke-linejoin="round" />
+										<path d="M7.875 21V9H16.875V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+											stroke-linejoin="round" />
+										<path d="M1.875 22H22.875" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</g>
+									<defs>
+										<clipPath id="clip0_368_2663">
+											<rect width="24" height="24" fill="white" transform="translate(0.125)" />
+										</clipPath>
+									</defs>
+								</svg>
+								<p class="d-none d-sm-inline">Agencias Bancarias</p>
+							</a>
+						</div>
+				  	</nav>
+
+					<div id="nav-tabContent" class="tab-content p-3" >
+
+						<div class="tab-pane fade show active" id="interbank-channel-1" role="tabpanel" aria-labelledby="nav-1-tab">
+							<h3 class="d-none">Banca Móvil</h3>
+							<ol>
+								<li>Ingresa a la aplicación móvil de Interbank.</li>
+								<li>Selecciona la opción <b>"Operaciones"</b> y elige la opción <b>"Pago y recargas".</b></li>
+								<li>Selecciona "Pago a institución o empresa".</li>
+								<li>Busca "360pay", elige e ingresa tu código de pago..</li>
+                                <li>Selecciona la deuda a pagar, confirma y ¡Listo!</li>
+
+							</ol>
+						</div>
+
+					  <div class="tab-pane fade" id="interbank-channel-2" role="tabpanel" aria-labelledby="nav-2-tab">
+							<h3 class="d-none">Banca Web</h3>
+							<ol>
+								<li>Ingresa a tu banca web Interbank desde: https://interbank.pe</li>
+								<li>Selecciona "Mis operaciones" y eligen la opción <b>"Pago o Recarga".</b></li>
+								<li>Selecciona "Pago a institución o empresa".</li>
+								<li>Busca "360pay", elige e ingresa tu código de pago..</li>
+								<li>Selecciona la deuda a pagar, confirma y ¡Listo!</li>
+
+							</ol>
+						</div>
+
+						<div class="tab-pane fade" id="interbank-channel-3" role="tabpanel" aria-labelledby="nav-3-tab">
+							<h3 class="d-none">Agentes</h3>
+							<ol>
+								<li>Acércate a un agente de Interbank e indica que deseas pagar al servicio de recaudación de Kashio Perú.</li>
+								<li>Indica el Código de Agente de Kashio:
+									
+										<ul>Pago en Soles: <strong> 0791501 </strong></ul>
+										<ul>Pago en Dólares:<strong> 0791502 </strong></ul>
+																	
+								</li>
+
+								<li>Indica tu código de pago.</li>
+                                <li>Indica monto total, moneda a pagar y ¡Listo! </li>
+								<li>Recibe el voucher de pago de la operación.</li>
+
+							</ol>
+						</div>
+
+						<div class="tab-pane fade" id="interbank-channel-4" role="tabpanel" aria-labelledby="nav-4-tab">
+							<h3 class="d-none">Agencias Bancarias</h3>
+							<ol>
+								<li>Acércate a una oficina o agencia del Interbank e indica que deseas pagar al servicio de recaudación de Kashio.</li>
+								<li>Elige la moneda a pagar y proporciona tu número de DNI, RUC, teléfono o código único según corresponda.</li>
+								<li>Elije las deudas a pagar y listo. </li>
+								<li>Recibe el voucher de pago de la operación.</li>
+							</ol>
+						</div>
+
+					</div> 
+					
+					<div class="bg-lightgray border-bluex p-2 extra-info">
+						<small>
+							(*) Pagos en Agencias Bancarias de los bancos BCP e Interbank tendrán un cargo por comisión bancaria de S/.3.60. <br>
+							Si tuviera algún problema con su pago vía Kashio, por favor escribir a  soporte@kashio.net			
+						</small>
+					</div>
+					
+				</div>
+			<!-- ##################################### FIN IBK ####################################### --> 
+
+			<!-- ##################################### INIT SBK ####################################### --> 
+				<div id="instrucciones-scotiabank" class="d-none"> 
+						
+					<div class="instrucciones-titulo text-center bg-scotiabank text-white">
+						Pasos a seguir para pagar en <span><img src="img/logos/scotiabank-inverse.png?version=09242021" alt=""></span>
+					</div>			
+					
+					<nav class="tabs">
+						<div class="nav nav-tabs nav-fill" id="nav-tab-1" role="tablist">
+							<a class="nav-item nav-link active" id="scotiabank-channel-1-tab" data-toggle="tab" href="#scotiabank-channel-1" role="tab" aria-controls="scotiabank-channel-1" aria-selected="true">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="smartphone-icon">
+									<path
+										d="M17 2H7C5.89543 2 5 2.89543 5 4V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V4C19 2.89543 18.1046 2 17 2Z"
+										stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M12 18H12.01" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								<p class="d-none d-sm-inline">Banca Móvil</p>						
+							</a>
+							<a class="nav-item nav-link" id="scotiabank-channel-2-tab" data-toggle="tab" href="#scotiabank-channel-2" role="tab" aria-controls="scotiabank-channel-2" aria-selected="false">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="monitor-icon">
+									<path
+										d="M20.125 3H4.125C3.02043 3 2.125 3.89543 2.125 5V15C2.125 16.1046 3.02043 17 4.125 17H20.125C21.2296 17 22.125 16.1046 22.125 15V5C22.125 3.89543 21.2296 3 20.125 3Z"
+										stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M8.125 21H16.125" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M12.125 17V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+								<p class="d-none d-sm-inline">Banca Web</p>
+							</a>
+							<a class="nav-item nav-link" id="scotiabank-channel-3-tab" data-toggle="tab" href="#scotiabank-channel-3" role="tab" aria-controls="scotiabank-channel-3" aria-selected="false">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="credit-card-icon">
+									<g clip-path="url(#clip0_368_2660)">
+										<path
+											d="M21.0942 2H4.65578C4.19691 2 3.79693 2.3123 3.68563 2.75746L2.18563 8.75746C2.02785 9.38861 2.50514 10 3.15571 10H3.875V20H21.875V10H22.5942C23.2448 10 23.7222 9.38861 23.5644 8.75746L22.0644 2.75746C21.9531 2.3123 21.5531 2 21.0942 2Z"
+											stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										<path
+											d="M22.875 10L21.8231 10C21.2308 10 20.6776 10.296 20.3491 10.7889V10.7889C19.6478 11.8408 18.1022 11.8408 17.4009 10.7889L17.375 10.75C17.1371 10.3932 16.6129 10.3932 16.375 10.75V10.75C15.6614 11.8204 14.0886 11.8204 13.375 10.75V10.75C13.1371 10.3932 12.6129 10.3932 12.375 10.75V10.75C11.6614 11.8204 10.0886 11.8204 9.375 10.75V10.75C9.13714 10.3932 8.61286 10.3932 8.375 10.75L8.34907 10.7889C7.64783 11.8408 6.10217 11.8408 5.40093 10.7889V10.7889C5.07236 10.296 4.51921 10 3.92686 10L3.875 10"
+											stroke="#C2C9D6" stroke-width="2" />
+									</g>
+									<defs>
+										<clipPath id="clip0_368_2660">
+											<rect width="24" height="24" fill="white" transform="translate(0.875)" />
+										</clipPath>
+									</defs>
+								</svg>
+								<p class="d-none d-sm-inline">Agentes y Bodegas</p>
+							</a>
+							<a class="nav-item nav-link" id="scotiabank-channel-4-tab" data-toggle="tab" href="#scotiabank-channel-4" role="tab" aria-controls="scotiabank-channel-4" aria-selected="false">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="home-icon">
+									<g clip-path="url(#clip0_368_2663)">
+										<path d="M12.375 1L1.875 9H22.875L12.375 1Z" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+											stroke-linejoin="round" />
+										<path d="M3.875 21V9H20.875V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+											stroke-linejoin="round" />
+										<path d="M7.875 21V9H16.875V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+											stroke-linejoin="round" />
+										<path d="M1.875 22H22.875" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</g>
+									<defs>
+										<clipPath id="clip0_368_2663">
+											<rect width="24" height="24" fill="white" transform="translate(0.125)" />
+										</clipPath>
+									</defs>
+								</svg>
+								<p class="d-none d-sm-inline">Agencias Bancarias</p>
+							</a>
+						</div>
+					</nav>
+
+					<div id="nav-tabContent" class="tab-content p-3" >
+
+						<div class="tab-pane fade show active" id="scotiabank-channel-1" role="tabpanel" aria-labelledby="nav-1-tab">
+							<h3 class="d-none">Banca Móvil</h3>
+							<ol>
+								<li>Ingresa a la aplicación móvil de Scotiabank.</li>
+								<li>Selecciona la opción <b>"Quiero"</b> y elige la opción <b>"Pagar".</b></li>
+								<li>Selecciona "Servicios o Instituciones". </li>
+								<li>Busca "360pay", elige e ingresa tu código de pago..</li>
+								<li>Selecciona la deuda a pagar, confirma y ¡Listo!</li>
+							</ol>
+						</div>
+
+					<div class="tab-pane fade" id="scotiabank-channel-2" role="tabpanel" aria-labelledby="nav-2-tab">
+						<h3 class="d-none">Banca Web</h3>
+							<ol>
+								<li>Ingresa a tu banca web Scotiabank desde: https://mi.scotiabank.com.pe/</li>
+								<li>Elige la opción <b>"Pagar"</b> y selecciona la opción <b>"Servicios o Instituciones".</b> </li>
+								<li>Busca "360pay", elige e ingresa tu código de pago..</li>
+								<li>Selecciona la deuda a pagar, confirma y ¡Listo!</li>
+							</ol>
+						</div>
+
+						<div class="tab-pane fade" id="scotiabank-channel-3" role="tabpanel" aria-labelledby="nav-3-tab">
+							<h3 class="d-none">Agentes</h3>
+							<ol>
+								<li>Acércate a un agente de Scotiabank e indica que deseas pagar al servicio de recaudación de Kashio Perú o indica nuestro  RUC 20602393799.</li>
+								<li>Indica tu código de pago.</li>
+								<li>Indica monto total, moneda a pagar y ¡Listo! </li>
+								<li>Recibe el voucher de pago de la operación.</li>
+							</ol>
+						</div>
+
+						<div class="tab-pane fade" id="scotiabank-channel-4" role="tabpanel" aria-labelledby="nav-4-tab">
+							<h3 class="d-none">Agencias Bancarias</h3>
+							<ol>
+								<li>Acércate a una oficina o agencia del Scotiabank e indica que deseas pagar al servicio de recaudación de KASHIO PERU.</li>
+								<li>Proporciona tu número de DNI, RUC, teléfono o código único según corresponda y elije la deuda que quieres pagar.</li>
+								<li>Elije el tipo de moneda y el moto a pagar.</li>
+								<li>Recibe el voucher de pago de la operación.</li>
+							</ol>
+						</div>
+
+					</div>
+
+				</div>
+			<!-- ##################################### FIN SBK ####################################### --> 
+
+			<!-- ##################################### INIT RPP ####################################### -->
+			<!--
+				<div id="instrucciones-rappibank" class="d-none"> 
+							
+					<div class="instrucciones-titulo text-center bg-rappibank text-white">
+						Pasos a seguir para pagar en <span><img src="./img/logos/rappibank-inverse.svg?version=09242021" alt=""></span>
+					</div>			
+					
+					<nav class="tabs">
+						<div class="nav nav-tabs nav-fill" id="nav-tab-1" role="tablist">
+							<a class="nav-item nav-link active" id="rappibank-channel-1-tab" data-toggle="tab" href="#rappibank-channel-1" role="tab" aria-controls="rappibank-channel-1" aria-selected="true">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="smartphone-icon">
+									<path
+										d="M17 2H7C5.89543 2 5 2.89543 5 4V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V4C19 2.89543 18.1046 2 17 2Z"
+										stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M12 18H12.01" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								<p class="d-none d-sm-inline">Banca Móvil</p>						
+							</a>
+						</div>
+					</nav>
+
+					<div id="nav-tabContent" class="tab-content p-3" >
+						<div class="tab-pane fade show active" id="rappibank-channel-1" role="tabpanel" aria-labelledby="nav-1-tab">
+							<h3 class="d-none">Banca Móvil</h3>
+							<ol>
+								<li>Ingresa a tu app de Rappibank desde Rappi.</li>
+								<li>Dale click a <b>"Cuenta"</b> y selecciona la cuenta que deseas utilizar para pagar la deuda.</li>
+								<li>Ubica la opción <b>"Pagar Servicios"</b> y luego click en <b>"ver más"</b>.</li>
+								<li>En el buscador coloca <b>"kashio"</b> y elige la moneda de tu deuda pendiente.</li>
+								<li>Colocar tu código de pago en el campo de DNI, RUC, TEL.</li>
+								<li>Selecciona tu monto a pagar y listo.</li>
+							</ol>
+						</div>
+					</div>
+
+				</div>
+			-->
+			<!-- ##################################### FIN RPP ####################################### --> 
+
+			<!-- ##################################### INIT KASNET ####################################### -->
+				<div id="instrucciones-kasnet" class="d-none">
+					
+					<div class="instrucciones-titulo text-center bg-kasnet text-white">
+						Pasos a seguir para pagar en <span><img src="img/logos/kasnet-inverse.png?version=09242021" alt=""></span>
+					</div>
+
+					<nav class="tabs">
+						<div class="nav nav-tabs nav-fill" id="nav-tab-1" role="tablist">
+							<a class="nav-item nav-link active" id="kasnet-channel-3-tab" data-toggle="tab" href="#kasnet-channel-3" role="tab" aria-controls="kasnet-channel-3" aria-selected="false">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="credit-card-icon">
+									<g clip-path="url(#clip0_368_2660)">
+										<path
+											d="M21.0942 2H4.65578C4.19691 2 3.79693 2.3123 3.68563 2.75746L2.18563 8.75746C2.02785 9.38861 2.50514 10 3.15571 10H3.875V20H21.875V10H22.5942C23.2448 10 23.7222 9.38861 23.5644 8.75746L22.0644 2.75746C21.9531 2.3123 21.5531 2 21.0942 2Z"
+											stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										<path
+											d="M22.875 10L21.8231 10C21.2308 10 20.6776 10.296 20.3491 10.7889V10.7889C19.6478 11.8408 18.1022 11.8408 17.4009 10.7889L17.375 10.75C17.1371 10.3932 16.6129 10.3932 16.375 10.75V10.75C15.6614 11.8204 14.0886 11.8204 13.375 10.75V10.75C13.1371 10.3932 12.6129 10.3932 12.375 10.75V10.75C11.6614 11.8204 10.0886 11.8204 9.375 10.75V10.75C9.13714 10.3932 8.61286 10.3932 8.375 10.75L8.34907 10.7889C7.64783 11.8408 6.10217 11.8408 5.40093 10.7889V10.7889C5.07236 10.296 4.51921 10 3.92686 10L3.875 10"
+											stroke="#C2C9D6" stroke-width="2" />
+									</g>
+									<defs>
+										<clipPath id="clip0_368_2660">
+											<rect width="24" height="24" fill="white" transform="translate(0.875)" />
+										</clipPath>
+									</defs>
+								</svg>
+								<p class="d-none d-sm-inline">Agentes y Bodegas</p>
+							</a>
+						</div>
+					</nav>
+
+					<div id="nav-tabContent" class="tab-content p-3" >
+
+						<div class="tab-pane fade show active" id="kasnet-channel-3" role="tabpanel" aria-labelledby="nav-3-tab">
+							<h3 class="d-none">Agentes</h3>
+							<ol>
+								<li>Acércate a un agente de KASNET e indica que deseas pagar al servicio de recaudación de Kashio Perú.</li>
+								<li>Indica el Código de Agente de Kashio:  <strong>220044</strong>.</li>
+								<li>Indica tu código de pago.</li>
+                                <li>Indica monto total, moneda a pagar y ¡Listo! </li>
+								<li>Recibe el voucher de pago de la operación.</li>
+							</ol>
+						</div>
+
+					</div>
+
+				</div>
+			<!-- ##################################### FIN KASNET ####################################### -->
+            
+            <!-- ##################################### INIT TAMBO ####################################### -->
+				<!--
+				<div id="instrucciones-tambo" class="d-none">
+					
+					<div class="instrucciones-titulo text-center bg-tambo text-white">
+						Pasos a seguir para pagar en <span><img src="img/logos/tambo-inverse.png?version=09242021" alt=""></span>
+					</div>
+
+					<nav class="tabs">
+						<div class="nav nav-tabs nav-fill" id="nav-tab-1" role="tablist">
+							<a class="nav-item nav-link active" id="tambo-channel-3-tab" data-toggle="tab" href="#tambo-channel-3" role="tab" aria-controls="tambo-channel-3" aria-selected="false">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="credit-card-icon">
+									<g clip-path="url(#clip0_368_2660)">
+										<path
+											d="M21.0942 2H4.65578C4.19691 2 3.79693 2.3123 3.68563 2.75746L2.18563 8.75746C2.02785 9.38861 2.50514 10 3.15571 10H3.875V20H21.875V10H22.5942C23.2448 10 23.7222 9.38861 23.5644 8.75746L22.0644 2.75746C21.9531 2.3123 21.5531 2 21.0942 2Z"
+											stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										<path
+											d="M22.875 10L21.8231 10C21.2308 10 20.6776 10.296 20.3491 10.7889V10.7889C19.6478 11.8408 18.1022 11.8408 17.4009 10.7889L17.375 10.75C17.1371 10.3932 16.6129 10.3932 16.375 10.75V10.75C15.6614 11.8204 14.0886 11.8204 13.375 10.75V10.75C13.1371 10.3932 12.6129 10.3932 12.375 10.75V10.75C11.6614 11.8204 10.0886 11.8204 9.375 10.75V10.75C9.13714 10.3932 8.61286 10.3932 8.375 10.75L8.34907 10.7889C7.64783 11.8408 6.10217 11.8408 5.40093 10.7889V10.7889C5.07236 10.296 4.51921 10 3.92686 10L3.875 10"
+											stroke="#C2C9D6" stroke-width="2" />
+									</g>
+									<defs>
+										<clipPath id="clip0_368_2660">
+											<rect width="24" height="24" fill="white" transform="translate(0.875)" />
+										</clipPath>
+									</defs>
+								</svg>
+								<p class="d-none d-sm-inline">Tiendas</p>
+							</a>
+						</div>	
+					</nav>
+
+					<div id="nav-tabContent" class="tab-content p-3" >
+
+						<div class="tab-pane fade show active" id="tambo-channel-3" role="tabpanel" aria-labelledby="nav-3-tab">
+							<h3 class="d-none">Agentes</h3>
+							<ol>
+								<li>Acércate a una tienda Tambo+ e indica que deseas realizar pagos por agente BBVA a la empresa "Kashio".</li>
+								<li>Indica tu código de pago.</li>
+								<li>Elige la Deuda a pagar y ¡Listo! </li>
+                                <li>Recibe el voucher de pago de la operación.</li>
+							</ol>
+						</div>
+            
+					</div>
+				</div>
+				-->
+			<!-- ##################################### FIN TAMBO ####################################### -->
+					
+			<!-- ##################################### INIT  CAJA AREQUIPA ####################################### -->	
+				<div id="instrucciones-caja-arequipa" class="d-none">
+					<div class="instrucciones-titulo text-center bg-caja-arequipa text-white">
+						Pasos a seguir para pagar en <span class="span-logo-caja-arequipa-inverse"><img src="img/logos/caja-arequipa-inverse.svg" alt="caja-arequipa"></span>
+					</div>
+
+					<nav class="tabs">
+						<div class="nav nav-tabs nav-fill" id="nav-tab-1" role="tablist">
+							<a class="nav-item nav-link active" id="caja-arequipa-channel-1-tab" data-toggle="tab" href="#caja-arequipa-channel-1" role="tab" aria-controls="caja-arequipa-channel-1" aria-selected="true">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="smartphone-icon">
+									<path
+										d="M17 2H7C5.89543 2 5 2.89543 5 4V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V4C19 2.89543 18.1046 2 17 2Z"
+										stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M12 18H12.01" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								<p class="d-none d-sm-inline">Banca Móvil</p>						
+							</a>
+							<a class="nav-item nav-link" id="caja-arequipa-channel-2-tab" data-toggle="tab" href="#caja-arequipa-channel-2" role="tab" aria-controls="caja-arequipa-channel-2" aria-selected="false">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="monitor-icon">
+									<path
+										d="M20.125 3H4.125C3.02043 3 2.125 3.89543 2.125 5V15C2.125 16.1046 3.02043 17 4.125 17H20.125C21.2296 17 22.125 16.1046 22.125 15V5C22.125 3.89543 21.2296 3 20.125 3Z"
+										stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M8.125 21H16.125" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M12.125 17V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+								<p class="d-none d-sm-inline">Homebanking</p>
+							</a>
+							<a class="nav-item nav-link" id="caja-arequipa-channel-3-tab" data-toggle="tab" href="#caja-arequipa-channel-3" role="tab" aria-controls="caja-arequipa-channel-3" aria-selected="false">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="credit-card-icon">
+									<g clip-path="url(#clip0_368_2660)">
+										<path
+											d="M21.0942 2H4.65578C4.19691 2 3.79693 2.3123 3.68563 2.75746L2.18563 8.75746C2.02785 9.38861 2.50514 10 3.15571 10H3.875V20H21.875V10H22.5942C23.2448 10 23.7222 9.38861 23.5644 8.75746L22.0644 2.75746C21.9531 2.3123 21.5531 2 21.0942 2Z"
+											stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										<path
+											d="M22.875 10L21.8231 10C21.2308 10 20.6776 10.296 20.3491 10.7889V10.7889C19.6478 11.8408 18.1022 11.8408 17.4009 10.7889L17.375 10.75C17.1371 10.3932 16.6129 10.3932 16.375 10.75V10.75C15.6614 11.8204 14.0886 11.8204 13.375 10.75V10.75C13.1371 10.3932 12.6129 10.3932 12.375 10.75V10.75C11.6614 11.8204 10.0886 11.8204 9.375 10.75V10.75C9.13714 10.3932 8.61286 10.3932 8.375 10.75L8.34907 10.7889C7.64783 11.8408 6.10217 11.8408 5.40093 10.7889V10.7889C5.07236 10.296 4.51921 10 3.92686 10L3.875 10"
+											stroke="#C2C9D6" stroke-width="2" />
+									</g>
+									<defs>
+										<clipPath id="clip0_368_2660">
+											<rect width="24" height="24" fill="white" transform="translate(0.875)" />
+										</clipPath>
+									</defs>
+								</svg>
+								<p class="d-none d-sm-inline">Agentes</p>
+							</a>
+							<a class="nav-item nav-link" id="caja-arequipa-channel-4-tab" data-toggle="tab" href="#caja-arequipa-channel-4" role="tab" aria-controls="caja-arequipa-channel-4" aria-selected="false">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="home-icon">
+									<g clip-path="url(#clip0_368_2663)">
+										<path d="M12.375 1L1.875 9H22.875L12.375 1Z" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+											stroke-linejoin="round" />
+										<path d="M3.875 21V9H20.875V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+											stroke-linejoin="round" />
+										<path d="M7.875 21V9H16.875V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+											stroke-linejoin="round" />
+										<path d="M1.875 22H22.875" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</g>
+									<defs>
+										<clipPath id="clip0_368_2663">
+											<rect width="24" height="24" fill="white" transform="translate(0.125)" />
+										</clipPath>
+									</defs>
+								</svg>
+								<p class="d-none d-sm-inline">Agencias</p>
+							</a>
+						</div>
+					</nav>
+
+					<div id="nav-tabContent" class="tab-content p-3"  >
+
+						<div class="tab-pane fade show active" id="caja-arequipa-channel-1" role="tabpanel" aria-labelledby="nav-1-tab">
+						<h3 class="d-none">Banca Móvil</h3>
+							<ol>
+								<li>Ingresa a la aplicación móvil de Caja Arequipa y selecciona la opción de <b>“Pagos”</b>.</li>
+								<li>Elige la opción de <b>“Pagos de Servicios e Instituciones”</b>.</li>
+								<li>Escoge opción <b>“Otros”</b> y busca <b>“Kashio”</b>.</li>
+								<li>Ingresa tu <b>código de pago</b>.</li>
+								<li>¡Confirma el monto a pagar y listo!</li>
+							</ol>
+						</div>
+
+						<div class="tab-pane fade" id="caja-arequipa-channel-2" role="tabpanel" aria-labelledby="nav-2-tab">
+							<h3 class="d-none">Homebanking</h3>
+							<ol>
+								<li>Ingresa al Homebanking de Caja Arequipa y selecciona la opción de <b>“Pagos”</b></li>
+								<li>Elige la opción de <b>“Pagos de Servicios e Instituciones”</b>.</li>
+								<li>Escoge la opción <b>“Otros”</b> y busca <b>“Kashio”</b>.</li>
+								<li>Ingresa tu <b>código de pago</b>.</li>
+								<li>¡Confirma el monto a pagar y listo!</li>
+							</ol>
+						</div>
+
+						<div class="tab-pane fade" id="caja-arequipa-channel-3" role="tabpanel" aria-labelledby="nav-3-tab">
+							<h3 class="d-none">Agentes</h3>
+							<ol>
+								<li>Indica que deseas realizar <b>“Pago Servicios”</b> a <b>“Kashio”</b>.</li>
+								<li>Indica tu <b>código de pago</b>.</li>
+								<li>Valida importe del pago que deseas realizar.</li>
+								<li>Realiza el pago y recibe tu comprobante.</li>
+							</ol>
+						</div>
+
+						<div class="tab-pane fade" id="caja-arequipa-channel-4" role="tabpanel" aria-labelledby="nav-4-tab">
+							<h3 class="d-none">Agencias</h3>
+							<ol>
+								<li>Indica que deseas realizar <b>“Pago Recaudo”</b> a <b>“Kashio”</b>.</li>
+								<li>Indica tu <b>código de pago</b>.</li>
+								<li>Confirma el monto de la deuda que deseas pagar.</li>	
+								<li>Realiza el pago y recibe tu comprobante.</li>
+							</ol>
+						</div>
+
+					</div>
+					
+					<div class="bg-lightgray border-bluex p-2 extra-info">
+						<small>
+							(*) Pagos en Agencias Bancarias de los bancos BCP e Interbank tendrán un cargo por comisión bancaria de S/.3.60. <br>
+							Si tuviera algún problema con su pago vía Kashio, por favor escribir a soporte@kashio.net			
+						</small>
+					</div>
+					
+				</div>
+			<!-- ##################################### FIN CAJA AREQUIPA ####################################### -->
+			<!-- ##################################### INIT  CAJA HUANCAYO ####################################### -->
+			<div id="instrucciones-caja-huancayo" class="d-none">
+				<div class="instrucciones-titulo text-center bg-caja-huancayo text-white">
+					Pasos a seguir para pagar en <span class="span-logo-caja-huancayo-inverse">
+					<img src="./img/logos/huancayo-inverse.svg" alt="caja-huancayo"></span>
+				</div>
+			
+				<nav class="tabs">
+					<div class="nav nav-tabs nav-fill" id="nav-tab-1" role="tablist">
+						<a class="nav-item nav-link active" id="caja-huancayo-channel-1-tab" data-toggle="tab"
+							href="#caja-huancayo-channel-1" role="tab" aria-controls="caja-huancayo-channel-1" aria-selected="true">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+								id="smartphone-icon">
+								<path
+									d="M17 2H7C5.89543 2 5 2.89543 5 4V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V4C19 2.89543 18.1046 2 17 2Z"
+									stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M12 18H12.01" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round" />
+							</svg>
+							<p class="d-none d-sm-inline">Banca Móvil</p>
+						</a>
+						<a class="nav-item nav-link" id="caja-huancayo-channel-2-tab" data-toggle="tab"
+							href="#caja-huancayo-channel-2" role="tab" aria-controls="caja-huancayo-channel-2"
+							aria-selected="false">
+							<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+								id="monitor-icon">
+								<path
+									d="M20.125 3H4.125C3.02043 3 2.125 3.89543 2.125 5V15C2.125 16.1046 3.02043 17 4.125 17H20.125C21.2296 17 22.125 16.1046 22.125 15V5C22.125 3.89543 21.2296 3 20.125 3Z"
+									stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M8.125 21H16.125" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round" />
+								<path d="M12.125 17V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round" />
+							</svg>
+							<p class="d-none d-sm-inline">Home banking</p>
+						</a>
+						<a class="nav-item nav-link" id="caja-huancayo-channel-3-tab" data-toggle="tab"
+							href="#caja-huancayo-channel-3" role="tab" aria-controls="caja-huancayo-channel-3"
+							aria-selected="false">
+							<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+								id="monitor-icon">
+								<path
+									d="M20.125 3H4.125C3.02043 3 2.125 3.89543 2.125 5V15C2.125 16.1046 3.02043 17 4.125 17H20.125C21.2296 17 22.125 16.1046 22.125 15V5C22.125 3.89543 21.2296 3 20.125 3Z"
+									stroke="#C2C9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M8.125 21H16.125" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round" />
+								<path d="M12.125 17V21" stroke="#C2C9D6" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round" />
+							</svg>
+							<p class="d-none d-sm-inline">Ventanilla</p>
+						</a>
+					</div>
+				</nav>
+			
+				<div id="nav-tabContent" class="tab-content p-3">
+			
+					<div class="tab-pane fade show active" id="caja-huancayo-channel-1" role="tabpanel" aria-labelledby="nav-1-tab">
+						<h3 class="d-none">Banca Móvil</h3>
+						<ol>
+							<li>Ingresa a la aplicación móvil de Caja Huancayo y selecciona la opción <b>"Pagos"</b>.</li>
+							<li>Elige la opción <b>"Otros pagos"</b>.</li>
+							<li>Busca "Kashio Perú", elige Kashio Perú Soles o Dólares.</li>
+							<li>Ingresa el código de pago.</li>
+							<li>¡Confirma el monto a pagar y listo!</li>
+						</ol>
+					</div>
+			
+					<div class="tab-pane fade" id="caja-huancayo-channel-2" role="tabpanel" aria-labelledby="nav-2-tab">
+						<h3 class="d-none">Homebanking</h3>
+						<ol>
+							<li>Selecciona la opción "PAGO DE SERVICIOS/Pago de servicios".</li>
+								<ol style="list-style-type: lower-alpha;">
+									<li>Selecciona la cuenta a cargar y el tipo de servicio: <b>Otros.</b></li>
+									<li>Busca en empresa: <b>KASHIO.</b></li>
+									<li>Haz clic en el botón <b>"BUSCAR".</b></li>
+									<li>Selecciona el concepto a pagar, según lo requerido.</li>
+								</ol>
+							<li>Selecciona en Concepto de Pago la moneda correspondiente: <b>SOLES o DÓLARES.</b>.</li>
+								<ol style="list-style-type: lower-alpha;">
+									<li>Ingresa el código de pago en Código de clientes en la Empresa.</li>
+									<li>Haz clic en el resultado de la búsqueda.</li>
+								</ol>
+							<li>Selecciona la operación y confirma.</li>
+							<li>Confirma los datos de la operación, luego ingresa el token digital y haz clic en <b>"Confirmar Operación"</b>.</li>
+						</ol>
+					</div>
+			
+					<div class="tab-pane fade" id="caja-huancayo-channel-3" role="tabpanel" aria-labelledby="nav-3-tab">
+						<h3 class="d-none">Agentes</h3>
+						<ol>
+							<li>Nombre del servicio de recaudación: KASHIO PERÚ.</li>
+							<li>Código de pago:</li>
+							<li>Moneda del pago: soles o dólares.</li>
+							<li>Confirma el monto a pagar.</li>
+						</ol>
+					</div>
+			
+				</div>            
+			</div>
+			<!-- ##################################### FIN CAJA HUANCAYO ####################################### -->
+
+		</div>
+	
+  	</section><!-- channels -->
+	<span id="redirect">
+	 	
+	</span>
+</div><!-- container -->
+
+<div class="container py-2">
+	<section class="plataformas ">
+		<div class="p-2 text-center legal-text">
+			<a class="my-2 terms-conditions-btn" id="terms-conditions-text" data-toggle="modal" data-target="#exampleModalCenter">Términos y condiciones</a>
+			| 
+			<a class="my-2 privacy-policy-btn" id="privacy-policy-text" data-toggle="modal" data-target="#exampleModalCenter">Políticas de privacidad</a>
+		</div>
+	</section>
+</div>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-xl " role="document">
+		<div class="modal-content">
+			<div class="modal-header bg-blue text-white p-1">
+				<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body p-0 " style="background: trasparent; height:80vh">
+				<span id="iframeview"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script
+  src="./js/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous">
+</script>
+<script src="./js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="./js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="./js/jquery.countdown.min.js"> </script>
+<script src="./js/functions.js?version=09242021"> </script>
+<script src="./js/client_service.js"> </script>
+<script src="./js/kashio-iframe.js"> </script>
+
+<script>
+	$(document).ready(function () {
+		$('[data-toggle="popover"]').popover();
+	});
+
+	$('#kashiopopover').popover().click(function () {
+		setTimeout(function () {
+			$('#kashiopopover').popover('hide');
+		}, 3000);
+	});
+</script>
+</body>
+</html>

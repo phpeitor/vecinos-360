@@ -1,0 +1,31 @@
+/* IFRAME  */
+
+.legal-text {
+	background-color: transparent;
+	color: #1F3967;
+}
+
+.legal-text #terms-conditions-text, .legal-text #privacy-policy-text {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.bg-blue {
+    background-color: #0055AD;
+}
+
+#page-container {
+	position: relative;
+	min-height: 100vh;
+}
+
+#content-wrap {
+	padding-bottom: 2.5rem;
+}
+
+footer:not(#footer-text) {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 2.5rem;
+}
