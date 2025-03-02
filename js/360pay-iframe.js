@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$.get( "/config.json", function( _config ) {
+	$.get( "./config.json", function( _config ) {
 		const kashio_url_base = _config.kashio_url_base;
 		
 		$(".terms-conditions-btn").click(function(){

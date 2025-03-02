@@ -266,7 +266,7 @@ $(document).ready(function () {
   function getConfig() {
     const pathname = window.location.pathname;
     if (pathname.includes("demo.html")) {
-      $.get("/config.json", function (_config) {
+      $.get("./config.json", function (_config) {
         document.title = _config.title;
       });
     }

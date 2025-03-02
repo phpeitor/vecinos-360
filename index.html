@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,13 +6,13 @@
 <link rel="stylesheet" href="./css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="./css/all.css">
 <link rel="stylesheet" href="./css/general.css?version=09242021">  
-<link rel="stylesheet" href="./css/kashio-iframe.css?version=07112023"/>  
+<link rel="stylesheet" href="./css/360pay-iframe.css?version=07112023"/>  
 <link href="./css/css.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="./css/css.css" rel="stylesheet">
-<link rel="icon" type="image/x-icon" href="kashio_ico.ico"/>
-<title>Adminio - Vecinos 360</title>
+<link rel="icon" type="image/x-icon" href="https://adminio.pe/icons/favicon.ico"/>
+<title>Adminio Perú 360pay - Vecinos 360</title>
 <script>
 	function copy(){
 		var copyText = document.getElementById("copyText");
@@ -33,15 +32,15 @@
 		margin-top: 4px;
 		cursor: pointer;
 	}
-	#kashio-flex {
+	#360pay-flex {
 		flex-direction: row;
    		 display: inline-flex;
 	}
-	#kashio-flex .icon {
+	#360pay-flex .icon {
 		margin-left: 15px;
 	}
 	@media(min-width:575px) and (max-width: 767px) {
-	#kashio-flex {
+	#360pay-flex {
     flex-direction: row;
     display: block;
 	}
@@ -54,17 +53,33 @@
 		margin-top: 8px;
 	}
 	}
+
+    .floating-image {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 200px; 
+        height: auto;
+        z-index: 1000; 
+    }
+
+    @media (max-width: 632px) {
+        .floating-image {
+            bottom: -55px; 
+        }
+    }
 </style>
 </head>
 <body>
 
+<img src="./img/inka.png" alt="Imagen flotante" class="floating-image">
 	  
 <div class="container py-2">
 	
 	<section id="detalles" class="">		
 
 		<div class="container-fluid bg-white display-7 text-center logo-description-container">
-			<img src="./img/LogoKashioPNG.png" height="40" alt="" class="mb-2">
+			<img src="./img/Logo360payPNG.png" height="40" alt="" class="mb-2">
             <p class="slogan">Paga fácil, seguro y con total comodidad</p>
 		</div>
 		
@@ -77,7 +92,7 @@
 		
 			<div class="col-6 p-3">
 				<small class="m-0">Nombre del servicio</small>
-				<p class="m-0 kashio_service">360pay</p>
+				<p class="m-0 360pay_service">360pay</p>
 			</div>
 			
 		</div>		
@@ -86,12 +101,12 @@
 			
 			<div class="col-12 col-sm-4 p-2 payment-code-container">
 				<p class="m-0 payment-code-label">Tu código de pago es:</p>
-				<div id="kashio-flex" class=" mt-1">
+				<div id="360pay-flex" class=" mt-1">
 					<div class="text">
 						<p class="display-4 bold m-0 doc" id="copyText"></p>
 					</div>
 					<div class="icon">
-						<a tabindex="0" id="kashiopopover" onclick="copy()" data-placement="top" data-content="Copiado a portapapeles" data-original-title="" title="">
+						<a tabindex="0" id="360paypopover" onclick="copy()" data-placement="top" data-content="Copiado a portapapeles" data-original-title="" title="">
 							<img src="./img/copy.svg" alt="Copy Img" class="copyIconImg">
 						</a>
 					</div>
@@ -175,28 +190,29 @@
 				<button id="btn-interbank" class="btn-logo"><img src="./img/logos/interbank.png?version=09242021" alt="interbank"></button>
 			</div>
 
-<!--		  	<div class="col-logo col-6 col-sm-1 content-logo-scotiabank">-->
-<!--				<button id="btn-scotiabank" class="btn-logo"><img src="./img/logos/scotiabank.png?version=09242021" alt="scotiabank"></button>-->
-<!--			</div>-->
+		  	<div class="col-logo col-6 col-sm-1 content-logo-scotiabank">
+			    <button id="btn-scotiabank" class="btn-logo"><img src="./img/logos/scotiabank.png?version=09242021" alt="scotiabank"></button>		
+            </div>
 			<!--
 			<div class="col-logo col-6 col-sm-1">
 				<button id="btn-rappibank" class="btn-logo"><img src="./img/logos/rappibank-logo 1.png?version=09242021" alt="rappibank"></button>
 			</div>
-			-->
+			
 		 	<div class="col-logo col-6 col-sm-1">
 				<button id="btn-kasnet" class="btn-logo"><img src="./img/logos/kasnet.png?version=09242021" alt="kasnet"></button>
 			</div>
-			<!--
+
             <div class="col-logo col-6 col-sm-1">
 				<button id="btn-tambo" class="btn-logo"><img src="./img/logos/tambo.png?version=09242021" alt="tambo"></button>
 			</div>
-			-->
-			<div class="col-logo col-6 col-sm-1">
+			
+            <div class="col-logo col-6 col-sm-1">
 				<button id="btn-caja-arequipa" class="btn-logo btn-logo-caja-arequipa"><img src="./img/logos/caja-arequipa.svg" alt="caja-arequipa"></button>
 			</div>
+
 			<div class="col-logo col-6 col-sm-1">
                 <button id="btn-caja-huancayo" class="btn-logo btn-logo-caja-huancayo"><img src="./img/logos/caja-huancayo.svg" alt="caja-huancayo"></button>
-            </div>
+            </div>-->
 	  	</div>
 		
 	</section><!-- plataformas -->	
@@ -378,8 +394,8 @@
 							  </div>
 						</div>
 						<ol id="info-bcp-text2" class="" >
-							<li>Acércate a un agente del BCP e indica que deseas pagar al servicio de recaudación de Kashio Perú.</li>
-							<li>Indica el Código de Agente de Kashio: <strong>15813</strong>.</li>
+							<li>Acércate a un agente del BCP e indica que deseas pagar al servicio de recaudación de 360pay.</li>
+							<li>Indica el Código de Agente de 360pay: <strong>15813</strong>.</li>
 							<li>Indica tu código de pago.</li>
 							<li>Indica monto total, moneda a pagar y ¡Listo! </li>
 							<li>Recibe el voucher de pago de la operación.</li>
@@ -414,7 +430,7 @@
 							  </div>
 						</div>
 						<ol id="info-bcp-text3" class="" >
-							<li>Acércate a una oficina o agencia del BCP e indica que deseas pagar al servicio de recaudación de Kashio.</li>
+							<li>Acércate a una oficina o agencia del BCP e indica que deseas pagar al servicio de recaudación de 360pay.</li>
 							<li>Elije el tipo de moneda a pagar y proporciona el número de tu DNI, RUC, teléfono o código único, según corresponda.</li>
 							<li>Elije la deuda que deseas pagar y listo. Recibe el voucher de pago de la operación.</li>						
 						</ol>
@@ -425,7 +441,7 @@
 				<div class="bg-lightgray border-bluex p-2 extra-info">
 					<small>
 						(*) Pagos en ventanilla de los bancos BCP e Interbank tendrán un cargo por comisión bancaria de S/.3.60. <br>
-						Si tuviera algún problema con su pago vía Kashio, por favor escribir a  soporte@kashio.net			
+						<!--Si tuviera algún problema con su pago vía 360pay, por favor escribir a  soporte@360pay.net			-->
 					</small>
 				</div>
 			</div>
@@ -482,7 +498,7 @@
 									</div>
 									<ol id="info-yape-text" class="" >
 										<li>En tu aplicativo <b>Yape</b>, ingresa a <b>Yapear Servicios</b>.</li>
-										<li>Ubica Kashio en la categoría <b>"Compras Online"</b>.</li>
+										<li>Ubica “360pay” en la categoría <b>"Compras Online"</b>.</li>
 										<li>Coloca tu <b>código de pago</b> y yapea!</li>
 									</ol>
 								</div>
@@ -581,7 +597,7 @@
 								<li>Ingresa a tu banca web BBVA desde: https://www.bbva.pe</li>
 								<li>Ve a tu cuenta, pulsa el botón "Quiero" y selecciona la opción <b>"Pagar servicio".</b></li>
                                 <li>Selecciona la opción <b>"Instituciones y empresas"</b> y pulsa la opción <b>"Nombre".</b></li>
-                                <li>Busca "Kashio Perú", elige Kashio Perú Soles o Dólares, pulsa siguiente e ingresa tu código de pago</li>
+                                <li>Busca "360pay", pulsa siguiente e ingresa tu código de pago</li>
                                 <li>Selecciona la deuda a pagar, confirma y ¡Listo!!</li>
 								
 							</ol>
@@ -590,8 +606,8 @@
 						<div class="tab-pane fade" id="bbva-channel-3" role="tabpanel" aria-labelledby="nav-3-tab">
 						  <h3 class="d-none">Agentes</h3>
 							<ol>
-								<li>Acércate a un agente del BBVA e indica que deseas pagar al servicio de recaudación de Kashio Perú.</li>
-								<li>Indica el Código de Agente de Kashio:</li>
+								<li>Acércate a un agente del BBVA e indica que deseas pagar al servicio de recaudación de 360pay.</li>
+								<li>Indica el Código de Agente de 360pay:</li>
 
 										<ul>Pago en Soles: <strong>  11140 </strong></ul>
 										<ul>Pago en Dólares:<strong> 11141 </strong></ul>
@@ -605,7 +621,7 @@
 						<div class="tab-pane fade" id="bbva-channel-4" role="tabpanel" aria-labelledby="nav-4-tab">
 							<h3 class="d-none">Agencias Bancarias</h3>
 							<ol>
-								<li>Acércate a una oficina o agencia del BBVA e indica que deseas pagar al servicio de recaudación de Kashio.</li>
+								<li>Acércate a una oficina o agencia del BBVA e indica que deseas pagar al servicio de recaudación de 360pay.</li>
 								<li>Elije el tipo de moneda en la que quieres pagar.</li>
 								<li>Proporciona tu número de DNI, RUC, teléfono o código único según corresponda y elije la deuda que quieres pagar.</li>
 								<li>Recibe el voucher de pago de la operación.</li>
@@ -693,7 +709,7 @@
 								<li>Ingresa a la aplicación móvil de Interbank.</li>
 								<li>Selecciona la opción <b>"Operaciones"</b> y elige la opción <b>"Pago y recargas".</b></li>
 								<li>Selecciona "Pago a institución o empresa".</li>
-								<li>Busca "360pay", elige e ingresa tu código de pago..</li>
+								<li>Busca "V360", elige servicio "360pay" e ingresa tu código de pago..</li>
                                 <li>Selecciona la deuda a pagar, confirma y ¡Listo!</li>
 
 							</ol>
@@ -705,7 +721,7 @@
 								<li>Ingresa a tu banca web Interbank desde: https://interbank.pe</li>
 								<li>Selecciona "Mis operaciones" y eligen la opción <b>"Pago o Recarga".</b></li>
 								<li>Selecciona "Pago a institución o empresa".</li>
-								<li>Busca "360pay", elige e ingresa tu código de pago..</li>
+								<li>Busca "V360", elige servicio "360pay" e ingresa tu código de pago..</li>
 								<li>Selecciona la deuda a pagar, confirma y ¡Listo!</li>
 
 							</ol>
@@ -714,8 +730,8 @@
 						<div class="tab-pane fade" id="interbank-channel-3" role="tabpanel" aria-labelledby="nav-3-tab">
 							<h3 class="d-none">Agentes</h3>
 							<ol>
-								<li>Acércate a un agente de Interbank e indica que deseas pagar al servicio de recaudación de Kashio Perú.</li>
-								<li>Indica el Código de Agente de Kashio:
+								<li>Acércate a un agente de Interbank e indica que deseas pagar al servicio de recaudación de 360pay.</li>
+								<li>Indica el Código de Agente de 360pay:
 									
 										<ul>Pago en Soles: <strong> 0791501 </strong></ul>
 										<ul>Pago en Dólares:<strong> 0791502 </strong></ul>
@@ -732,7 +748,7 @@
 						<div class="tab-pane fade" id="interbank-channel-4" role="tabpanel" aria-labelledby="nav-4-tab">
 							<h3 class="d-none">Agencias Bancarias</h3>
 							<ol>
-								<li>Acércate a una oficina o agencia del Interbank e indica que deseas pagar al servicio de recaudación de Kashio.</li>
+								<li>Acércate a una oficina o agencia del Interbank e indica que deseas pagar al servicio de recaudación de 360pay.</li>
 								<li>Elige la moneda a pagar y proporciona tu número de DNI, RUC, teléfono o código único según corresponda.</li>
 								<li>Elije las deudas a pagar y listo. </li>
 								<li>Recibe el voucher de pago de la operación.</li>
@@ -744,7 +760,7 @@
 					<div class="bg-lightgray border-bluex p-2 extra-info">
 						<small>
 							(*) Pagos en Agencias Bancarias de los bancos BCP e Interbank tendrán un cargo por comisión bancaria de S/.3.60. <br>
-							Si tuviera algún problema con su pago vía Kashio, por favor escribir a  soporte@kashio.net			
+							<!--Si tuviera algún problema con su pago vía 360pay, por favor escribir a  soporte@360pay.net		-->	
 						</small>
 					</div>
 					
@@ -846,7 +862,7 @@
 						<div class="tab-pane fade" id="scotiabank-channel-3" role="tabpanel" aria-labelledby="nav-3-tab">
 							<h3 class="d-none">Agentes</h3>
 							<ol>
-								<li>Acércate a un agente de Scotiabank e indica que deseas pagar al servicio de recaudación de Kashio Perú o indica nuestro  RUC 20602393799.</li>
+								<li>Acércate a un agente de Scotiabank e indica que deseas pagar al servicio de recaudación de 360pay o indica nuestro  RUC 20602393799.</li>
 								<li>Indica tu código de pago.</li>
 								<li>Indica monto total, moneda a pagar y ¡Listo! </li>
 								<li>Recibe el voucher de pago de la operación.</li>
@@ -856,7 +872,7 @@
 						<div class="tab-pane fade" id="scotiabank-channel-4" role="tabpanel" aria-labelledby="nav-4-tab">
 							<h3 class="d-none">Agencias Bancarias</h3>
 							<ol>
-								<li>Acércate a una oficina o agencia del Scotiabank e indica que deseas pagar al servicio de recaudación de KASHIO PERU.</li>
+								<li>Acércate a una oficina o agencia del Scotiabank e indica que deseas pagar al servicio de recaudación de 360pay PERU.</li>
 								<li>Proporciona tu número de DNI, RUC, teléfono o código único según corresponda y elije la deuda que quieres pagar.</li>
 								<li>Elije el tipo de moneda y el moto a pagar.</li>
 								<li>Recibe el voucher de pago de la operación.</li>
@@ -898,7 +914,7 @@
 								<li>Ingresa a tu app de Rappibank desde Rappi.</li>
 								<li>Dale click a <b>"Cuenta"</b> y selecciona la cuenta que deseas utilizar para pagar la deuda.</li>
 								<li>Ubica la opción <b>"Pagar Servicios"</b> y luego click en <b>"ver más"</b>.</li>
-								<li>En el buscador coloca <b>"kashio"</b> y elige la moneda de tu deuda pendiente.</li>
+								<li>En el buscador coloca <b>"360pay"</b> y elige la moneda de tu deuda pendiente.</li>
 								<li>Colocar tu código de pago en el campo de DNI, RUC, TEL.</li>
 								<li>Selecciona tu monto a pagar y listo.</li>
 							</ol>
@@ -945,8 +961,8 @@
 						<div class="tab-pane fade show active" id="kasnet-channel-3" role="tabpanel" aria-labelledby="nav-3-tab">
 							<h3 class="d-none">Agentes</h3>
 							<ol>
-								<li>Acércate a un agente de KASNET e indica que deseas pagar al servicio de recaudación de Kashio Perú.</li>
-								<li>Indica el Código de Agente de Kashio:  <strong>220044</strong>.</li>
+								<li>Acércate a un agente de KASNET e indica que deseas pagar al servicio de recaudación de 360pay.</li>
+								<li>Indica el Código de Agente de 360pay:  <strong>220044</strong>.</li>
 								<li>Indica tu código de pago.</li>
                                 <li>Indica monto total, moneda a pagar y ¡Listo! </li>
 								<li>Recibe el voucher de pago de la operación.</li>
@@ -994,7 +1010,7 @@
 						<div class="tab-pane fade show active" id="tambo-channel-3" role="tabpanel" aria-labelledby="nav-3-tab">
 							<h3 class="d-none">Agentes</h3>
 							<ol>
-								<li>Acércate a una tienda Tambo+ e indica que deseas realizar pagos por agente BBVA a la empresa "Kashio".</li>
+								<li>Acércate a una tienda Tambo+ e indica que deseas realizar pagos por agente BBVA a la empresa "360pay".</li>
 								<li>Indica tu código de pago.</li>
 								<li>Elige la Deuda a pagar y ¡Listo! </li>
                                 <li>Recibe el voucher de pago de la operación.</li>
@@ -1081,7 +1097,7 @@
 							<ol>
 								<li>Ingresa a la aplicación móvil de Caja Arequipa y selecciona la opción de <b>“Pagos”</b>.</li>
 								<li>Elige la opción de <b>“Pagos de Servicios e Instituciones”</b>.</li>
-								<li>Escoge opción <b>“Otros”</b> y busca <b>“Kashio”</b>.</li>
+								<li>Escoge opción <b>“Otros”</b> y busca <b>“360pay”</b>.</li>
 								<li>Ingresa tu <b>código de pago</b>.</li>
 								<li>¡Confirma el monto a pagar y listo!</li>
 							</ol>
@@ -1092,7 +1108,7 @@
 							<ol>
 								<li>Ingresa al Homebanking de Caja Arequipa y selecciona la opción de <b>“Pagos”</b></li>
 								<li>Elige la opción de <b>“Pagos de Servicios e Instituciones”</b>.</li>
-								<li>Escoge la opción <b>“Otros”</b> y busca <b>“Kashio”</b>.</li>
+								<li>Escoge la opción <b>“Otros”</b> y busca <b>“360pay”</b>.</li>
 								<li>Ingresa tu <b>código de pago</b>.</li>
 								<li>¡Confirma el monto a pagar y listo!</li>
 							</ol>
@@ -1101,7 +1117,7 @@
 						<div class="tab-pane fade" id="caja-arequipa-channel-3" role="tabpanel" aria-labelledby="nav-3-tab">
 							<h3 class="d-none">Agentes</h3>
 							<ol>
-								<li>Indica que deseas realizar <b>“Pago Servicios”</b> a <b>“Kashio”</b>.</li>
+								<li>Indica que deseas realizar <b>“Pago Servicios”</b> a <b>“360pay”</b>.</li>
 								<li>Indica tu <b>código de pago</b>.</li>
 								<li>Valida importe del pago que deseas realizar.</li>
 								<li>Realiza el pago y recibe tu comprobante.</li>
@@ -1111,7 +1127,7 @@
 						<div class="tab-pane fade" id="caja-arequipa-channel-4" role="tabpanel" aria-labelledby="nav-4-tab">
 							<h3 class="d-none">Agencias</h3>
 							<ol>
-								<li>Indica que deseas realizar <b>“Pago Recaudo”</b> a <b>“Kashio”</b>.</li>
+								<li>Indica que deseas realizar <b>“Pago Recaudo”</b> a <b>“360pay”</b>.</li>
 								<li>Indica tu <b>código de pago</b>.</li>
 								<li>Confirma el monto de la deuda que deseas pagar.</li>	
 								<li>Realiza el pago y recibe tu comprobante.</li>
@@ -1123,7 +1139,7 @@
 					<div class="bg-lightgray border-bluex p-2 extra-info">
 						<small>
 							(*) Pagos en Agencias Bancarias de los bancos BCP e Interbank tendrán un cargo por comisión bancaria de S/.3.60. <br>
-							Si tuviera algún problema con su pago vía Kashio, por favor escribir a soporte@kashio.net			
+							<!--Si tuviera algún problema con su pago vía 360pay, por favor escribir a soporte@360pay.net	-->		
 						</small>
 					</div>
 					
@@ -1190,7 +1206,7 @@
 						<ol>
 							<li>Ingresa a la aplicación móvil de Caja Huancayo y selecciona la opción <b>"Pagos"</b>.</li>
 							<li>Elige la opción <b>"Otros pagos"</b>.</li>
-							<li>Busca "Kashio Perú", elige Kashio Perú Soles o Dólares.</li>
+							<li>Busca "360pay", elige 360pay Soles o Dólares.</li>
 							<li>Ingresa el código de pago.</li>
 							<li>¡Confirma el monto a pagar y listo!</li>
 						</ol>
@@ -1202,7 +1218,7 @@
 							<li>Selecciona la opción "PAGO DE SERVICIOS/Pago de servicios".</li>
 								<ol style="list-style-type: lower-alpha;">
 									<li>Selecciona la cuenta a cargar y el tipo de servicio: <b>Otros.</b></li>
-									<li>Busca en empresa: <b>KASHIO.</b></li>
+									<li>Busca en empresa: <b>360pay.</b></li>
 									<li>Haz clic en el botón <b>"BUSCAR".</b></li>
 									<li>Selecciona el concepto a pagar, según lo requerido.</li>
 								</ol>
@@ -1219,7 +1235,7 @@
 					<div class="tab-pane fade" id="caja-huancayo-channel-3" role="tabpanel" aria-labelledby="nav-3-tab">
 						<h3 class="d-none">Agentes</h3>
 						<ol>
-							<li>Nombre del servicio de recaudación: KASHIO PERÚ.</li>
+							<li>Nombre del servicio de recaudación: 360pay.</li>
 							<li>Código de pago:</li>
 							<li>Moneda del pago: soles o dólares.</li>
 							<li>Confirma el monto a pagar.</li>
@@ -1275,16 +1291,16 @@
 <script src="./js/jquery.countdown.min.js"> </script>
 <script src="./js/functions.js?version=09242021"> </script>
 <script src="./js/client_service.js"> </script>
-<script src="./js/kashio-iframe.js"> </script>
+<script src="./js/360pay-iframe.js"> </script>
 
 <script>
 	$(document).ready(function () {
 		$('[data-toggle="popover"]').popover();
 	});
 
-	$('#kashiopopover').popover().click(function () {
+	$('#360paypopover').popover().click(function () {
 		setTimeout(function () {
-			$('#kashiopopover').popover('hide');
+			$('#360paypopover').popover('hide');
 		}, 3000);
 	});
 </script>
