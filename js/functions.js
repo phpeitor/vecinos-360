@@ -272,4 +272,25 @@ $(document).ready(function () {
     }
   }
   getConfig();
+
+  function copy() {
+    var copyText = document.getElementById("copyText");
+    var textArea = document.createElement("textarea");
+    textArea.value = copyText.textContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("Copy");
+    textArea.remove();
+  }
+
+  $(document).ready(function () {
+    $('[data-toggle="popover"]').popover();
+  });
+
+  $('#360paypopover').popover().click(function () {
+    setTimeout(function () {
+      $('#360paypopover').popover('hide');
+    }, 3000);
+  });
+
 });
