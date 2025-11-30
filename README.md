@@ -4,7 +4,7 @@
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](https://www.linkedin.com/in/drphp/)
 
 <a href="https://www.instagram.com/amvsoft.tech/">
-  <img src="https://adminio.pe/360pay/img/inka.png" alt="Instagram" width="200">
+  <img src="https://adminio.pe/360pay/img/inka2.png" alt="Instagram" width="200">
 </a>
 
 ## 🚀 Quick Start
