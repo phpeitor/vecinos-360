@@ -11,6 +11,17 @@ $(document).ready(function () {
     textArea.remove();
   };
 
+  $(".logos-container .btn-logo").on("click", function () {
+    var $button = $(this);
+    $button.removeClass("btn-logo-selecting");
+    void this.offsetWidth;
+    $button.addClass("btn-logo-selecting");
+
+    setTimeout(function () {
+      $button.removeClass("btn-logo-selecting");
+    }, 350);
+  });
+
   $("#btn-yape").click(function (e) {
     $("#btn-yape").addClass("active");
     $("#btn-tambo").removeClass("active");

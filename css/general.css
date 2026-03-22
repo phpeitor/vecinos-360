@@ -65,7 +65,9 @@
 body {
 	overflow-x: hidden;
 	color: #878787;
-    background-color: #d0e2fb;
+	background: linear-gradient(135deg, #f08a24 0%, #2f74b7 100%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	font-family: 'Red Hat Display', sans-serif !important;
 }
 
@@ -477,6 +479,24 @@ a.text-grey:hover, a.text-blue:focus {
 	padding: 1.9rem;
 }
 
+.logo-description-container .logo-360pay {
+	animation: logoFloat 3.2s ease-in-out infinite;
+	transform-origin: center;
+	will-change: transform, filter;
+}
+
+@keyframes logoFloat {
+	0%,
+	100% {
+		transform: translateY(0) scale(1);
+		filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.08));
+	}
+	50% {
+		transform: translateY(-4px) scale(1.02);
+		filter: drop-shadow(0 8px 10px rgba(47, 116, 183, 0.25));
+	}
+}
+
 .slogan {
 	color: #004481;
     font-weight: 700;
@@ -527,6 +547,25 @@ a.text-grey:hover, a.text-blue:focus {
 	display: flex;
 	justify-content: space-evenly;
 	padding-right: 20px !important;
+}
+
+@keyframes bankBtnSelect {
+	0% {
+		transform: translateY(0) scale(1);
+	}
+	45% {
+		transform: translateY(-2px) scale(1.22);
+	}
+	72% {
+		transform: translateY(0) scale(0.96);
+	}
+	100% {
+		transform: translateY(0) scale(1);
+	}
+}
+
+.btn-logo.btn-logo-selecting img {
+	animation: bankBtnSelect 420ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
 .tabs a p {
@@ -817,4 +856,11 @@ svg {
 	font-style: normal;
 	font-weight: 400;
 	line-height: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.logo-description-container .logo-360pay,
+	.btn-logo.btn-logo-selecting img {
+		animation: none !important;
+	}
 }
