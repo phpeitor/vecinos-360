@@ -27,8 +27,6 @@ cd vecinos-360
 
 2. Abrir `index.html` en tu navegador.
 
-## Nota Técnica
-
 ### Estructura Base
 
 - `index.html`: plantilla principal de la interfaz.
