@@ -174,32 +174,86 @@ body {
 	height: 100%;
 	object-fit: contain;
 	opacity: 0;
-	animation: inkaFrameCycle 1.8s steps(1, end) infinite;
 	pointer-events: none;
 }
 
 .inka-frame-1 {
-	animation-delay: 0s;
+	animation: inkaFrame1 3.6s linear infinite;
 }
 
 .inka-frame-2 {
-	animation-delay: 0.6s;
-	transform: translateX(2px);
-	filter: saturate(1.08);
+	animation: inkaFrame2 3.6s linear infinite;
 }
 
 .inka-frame-3 {
-	animation-delay: 1.2s;
+	animation: inkaFrame3 3.6s linear infinite;
 }
 
-@keyframes inkaFrameCycle {
+.inka-frame-4 {
+	animation: inkaFrame4 3.6s linear infinite;
+}
+
+@keyframes inkaFrame1 {
 	0%,
-	33% {
+	20% {
 		opacity: 1;
 	}
-	34%,
+	24%,
 	100% {
 		opacity: 0;
+	}
+}
+
+@keyframes inkaFrame2 {
+	0%,
+	24% {
+		opacity: 0;
+		transform: translateX(0);
+		filter: saturate(1);
+	}
+	25%,
+	45% {
+		opacity: 1;
+		transform: translateX(2px);
+		filter: saturate(1.08);
+	}
+	49%,
+	100% {
+		opacity: 0;
+		transform: translateX(0);
+		filter: saturate(1);
+	}
+}
+
+@keyframes inkaFrame3 {
+	0%,
+	49% {
+		opacity: 0;
+	}
+	50%,
+	68% {
+		opacity: 1;
+	}
+	72%,
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes inkaFrame4 {
+	0%,
+	71% {
+		opacity: 0;
+		transform: translateX(0) scale(1);
+	}
+	75%,
+	84% {
+		opacity: 1;
+		transform: translateX(0) scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(14px) scale(0.95);
 	}
 }
 
