@@ -150,13 +150,67 @@ body {
 	}
 }
 
-.floating-image {
+.inka-animated-link {
 	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	width: 200px;
-	height: auto;
+	right: 16px;
+	bottom: 14px;
+	width: clamp(120px, 13vw, 165px);
+	height: clamp(120px, 13vw, 165px);
+	display: block;
 	z-index: 1000;
+	text-decoration: none;
+	transition: transform 0.2s ease;
+	animation: inkaBob 2.4s ease-in-out infinite;
+}
+
+.inka-animated-link:hover {
+	transform: scale(1.03);
+}
+
+.inka-frame {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	opacity: 0;
+	animation: inkaFrameCycle 1.8s steps(1, end) infinite;
+	pointer-events: none;
+}
+
+.inka-frame-1 {
+	animation-delay: 0s;
+}
+
+.inka-frame-2 {
+	animation-delay: 0.6s;
+	transform: translateX(2px);
+	filter: saturate(1.08);
+}
+
+.inka-frame-3 {
+	animation-delay: 1.2s;
+}
+
+@keyframes inkaFrameCycle {
+	0%,
+	33% {
+		opacity: 1;
+	}
+	34%,
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes inkaBob {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-2px);
+	}
 }
 
 #detalles {
@@ -188,9 +242,18 @@ body {
 	text-decoration: none;
 }
 
-@media (max-width: 632px) {
-	.floating-image {
-		bottom: -55px;
+@media (max-width: 991px) {
+	.inka-animated-link {
+		width: 106px;
+		height: 106px;
+		right: 10px;
+		bottom: 10px;
+	}
+}
+
+@media (max-width: 767px) {
+	.inka-animated-link {
+		display: none;
 	}
 }
 
