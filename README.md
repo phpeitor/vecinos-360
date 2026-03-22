@@ -5,13 +5,9 @@
 
 Proyecto web estático para mostrar y gestionar opciones de pago en 360pay.
 
-## Vista Rápida
-
 <p align="center">
   <img src="./img/Logo360payPNG.png" alt="Logo 360pay" width="220" />
 </p>
-
-## Frames de la Animación del Inka
 
 <p align="center">
   <img src="./img/inka1.png" alt="Inka frame 1" width="140" />
@@ -30,9 +26,3 @@ cd vecinos-360
 ```
 
 2. Abrir `index.html` en tu navegador.
-
-## Autor
-
-<a href="https://www.instagram.com/amvsoft.tech/">
-  <img src="./img/inka2.png" alt="Instagram amvsoft.tech" width="120" />
-</a>
