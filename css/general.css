@@ -154,8 +154,8 @@ body {
 	position: fixed;
 	right: 16px;
 	bottom: 14px;
-	width: clamp(120px, 13vw, 165px);
-	height: clamp(120px, 13vw, 165px);
+	width: clamp(145px, 16vw, 210px);
+	height: clamp(145px, 16vw, 210px);
 	display: block;
 	z-index: 1000;
 	text-decoration: none;
@@ -178,19 +178,19 @@ body {
 }
 
 .inka-frame-1 {
-	animation: inkaFrame1 3.6s linear infinite;
+	animation: inkaFrame1 8.6s linear infinite;
 }
 
 .inka-frame-2 {
-	animation: inkaFrame2 3.6s linear infinite;
+	animation: inkaFrame2 8.6s linear infinite;
 }
 
 .inka-frame-3 {
-	animation: inkaFrame3 3.6s linear infinite;
+	animation: inkaFrame3 8.6s linear infinite;
 }
 
 .inka-frame-4 {
-	animation: inkaFrame4 3.6s linear infinite;
+	animation: inkaFrame4 8.6s linear infinite;
 }
 
 @keyframes inkaFrame1 {
@@ -244,16 +244,19 @@ body {
 	0%,
 	71% {
 		opacity: 0;
-		transform: translateX(0) scale(1);
+		transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
 	}
-	75%,
-	84% {
+	75% {
 		opacity: 1;
-		transform: translateX(0) scale(1);
+		transform: translate3d(-2px, 0, 0) scale(1.02) rotate(-1deg);
+	}
+	88% {
+		opacity: 1;
+		transform: translate3d(8px, -4px, 0) scale(1.12) rotate(2deg);
 	}
 	100% {
 		opacity: 0;
-		transform: translateX(14px) scale(0.95);
+		transform: translate3d(28px, -16px, 0) scale(1.28) rotate(4deg);
 	}
 }
 
@@ -298,8 +301,8 @@ body {
 
 @media (max-width: 991px) {
 	.inka-animated-link {
-		width: 106px;
-		height: 106px;
+		width: 126px;
+		height: 126px;
 		right: 10px;
 		bottom: 10px;
 	}
