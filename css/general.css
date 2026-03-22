@@ -159,6 +159,35 @@ body {
 	z-index: 1000;
 }
 
+#detalles {
+	position: relative;
+}
+
+.home-icon-link {
+	position: absolute;
+	top: 6px;
+	left: 6px;
+	width: 40px;
+	height: 40px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.92);
+	color: #0666EB;
+	font-size: 20px;
+	text-decoration: none;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	z-index: 1200;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-icon-link:hover {
+	transform: scale(1.08);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+	text-decoration: none;
+}
+
 @media (max-width: 632px) {
 	.floating-image {
 		bottom: -55px;
