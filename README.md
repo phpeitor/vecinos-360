@@ -1,22 +1,38 @@
-# 360pay - Vecinos360 💸💴
+# 360pay - Vecinos360💸
 
-[![forthebadge](http://forthebadge.com/images/badges/validated-html5.svg)](https://www.linkedin.com/in/drphp/)
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](https://www.linkedin.com/in/drphp/)
+[![forthebadge](https://forthebadge.com/images/badges/validated-html5.svg)](https://www.linkedin.com/in/drphp/)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://www.linkedin.com/in/drphp/)
 
-<a href="https://www.instagram.com/amvsoft.tech/">
-  <img src="https://adminio.pe/360pay/img/inka2.png" alt="Instagram" width="200">
-</a>
+Proyecto web estático para mostrar y gestionar opciones de pago en 360pay.
 
-## 🚀 Quick Start
+## Vista Rápida
 
-1. **Clonar este repositorio**
+<p align="center">
+  <img src="./img/Logo360payPNG.png" alt="Logo 360pay" width="220" />
+</p>
+
+## Frames de la Animación del Inka
+
+<p align="center">
+  <img src="./img/inka1.png" alt="Inka frame 1" width="140" />
+  <img src="./img/inka2.png" alt="Inka frame 2" width="140" />
+  <img src="./img/inka3.png" alt="Inka frame 3" width="140" />
+  <img src="./img/inka4.png" alt="Inka frame 4" width="140" />
+</p>
+
+## Quick Start
+
+1. Clonar este repositorio.
+
 ```bash
 git clone https://github.com/phpeitor/vecinos-360.git
 cd vecinos-360
 ```
-2. **Ejecutar comando**
-```bash
-index.html
-```
 
-*If you're interested in knowing the powerlevel configuration to get this prompt, have a look at [this gist](https://github.com/phpeitor/).*
+2. Abrir `index.html` en tu navegador.
+
+## Autor
+
+<a href="https://www.instagram.com/amvsoft.tech/">
+  <img src="./img/inka2.png" alt="Instagram amvsoft.tech" width="120" />
+</a>
