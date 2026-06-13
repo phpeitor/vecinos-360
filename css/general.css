@@ -65,10 +65,12 @@
 body {
 	overflow-x: hidden;
 	color: #878787;
-	background: linear-gradient(135deg, #f08a24 0%, #2f74b7 100%);
+	background: linear-gradient(120deg, #d45f08 0%, #9b3d4f 48%, #26118f 100%);
+	background-size: 220% 220%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	font-family: 'Red Hat Display', sans-serif !important;
+	animation: adminioGradientMove 12s ease-in-out infinite;
 }
 
 body > .container {
@@ -89,9 +91,9 @@ body > .container {
 	position: absolute;
 	inset: 0;
 	background:
-		radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.18), transparent 16%),
-		radial-gradient(circle at 78% 30%, rgba(181, 249, 72, 0.12), transparent 18%),
-		radial-gradient(circle at 50% 85%, rgba(255, 255, 255, 0.12), transparent 22%);
+		radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.14), transparent 16%),
+		radial-gradient(circle at 82% 30%, rgba(54, 184, 204, 0.16), transparent 18%),
+		radial-gradient(circle at 50% 85%, rgba(239, 126, 35, 0.16), transparent 22%);
 	animation: paymentBgPulse 8s ease-in-out infinite;
 }
 
@@ -132,8 +134,8 @@ body > .container {
 	width: 12px;
 	height: 26px;
 	border-radius: 999px;
-	background: rgba(181, 249, 72, 0.55);
-	box-shadow: 0 0 20px rgba(181, 249, 72, 0.28);
+	background: rgba(72, 172, 193, 0.72);
+	box-shadow: 0 0 20px rgba(72, 172, 193, 0.32);
 	animation: paymentDotFloat 5.6s ease-in-out infinite;
 }
 
@@ -159,50 +161,75 @@ body > .container {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: clamp(72px, 8vw, 112px);
-	height: clamp(54px, 6vw, 82px);
-	padding: 14px;
-	border-radius: 24px;
-	background: rgba(255, 255, 255, 0.9);
-	box-shadow: 0 18px 42px rgba(31, 57, 103, 0.25);
+	width: clamp(62px, 6vw, 92px);
+	height: clamp(62px, 6vw, 92px);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 28px;
+	background: rgba(255, 255, 255, 0.88);
+	box-shadow: 0 18px 42px rgba(31, 57, 103, 0.3);
 	backdrop-filter: blur(4px);
 	animation: paymentIconFloat 7s ease-in-out infinite;
-	opacity: 0.88;
+	color: #ef7e23;
+	font-size: clamp(26px, 3vw, 42px);
+	opacity: 0.95;
 }
 
-.payment-float img {
-	max-width: 100%;
-	max-height: 100%;
-	object-fit: contain;
+.payment-float::after {
+	content: "";
+	position: absolute;
+	inset: 8px;
+	border-radius: 22px;
+	border: 1px solid rgba(38, 17, 143, 0.08);
 }
 
-.payment-float-bcp {
-	top: 14%;
-	left: 12%;
+.payment-float i {
+	position: relative;
+	z-index: 1;
 }
 
-.payment-float-yape {
-	top: 20%;
-	right: 14%;
+.payment-float-dollar {
+	top: 13%;
+	left: 22px;
+}
+
+.payment-float-money {
+	top: 27%;
+	right: 24px;
 	animation-delay: -1.4s;
 }
 
-.payment-float-bbva {
+.payment-float-coins {
 	top: 48%;
-	left: 4%;
+	left: 18px;
 	animation-delay: -2.5s;
 }
 
-.payment-float-interbank {
-	right: 8%;
-	bottom: 22%;
+.payment-float-card {
+	right: 20px;
+	bottom: 30%;
 	animation-delay: -3.7s;
 }
 
-.payment-float-scotiabank {
-	left: 42%;
-	bottom: 8%;
+.payment-float-wallet {
+	left: 28px;
+	bottom: 10%;
 	animation-delay: -4.8s;
+	color: #26118f;
+}
+
+.payment-float-money,
+.payment-float-card {
+	color: #48acc1;
+}
+
+@keyframes adminioGradientMove {
+	0%,
+	100% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
 }
 
 @keyframes paymentBgPulse {
@@ -251,25 +278,22 @@ body > .container {
 
 @media (max-width: 767px) {
 	.payment-float {
-		width: 58px;
-		height: 44px;
-		padding: 10px;
-		border-radius: 16px;
-		opacity: 0.5;
+		width: 50px;
+		height: 50px;
+		border-radius: 18px;
+		font-size: 22px;
+		opacity: 0.58;
 	}
 
-	.payment-float-bcp,
-	.payment-float-bbva {
-		left: -18px;
+	.payment-float-dollar,
+	.payment-float-coins,
+	.payment-float-wallet {
+		left: -12px;
 	}
 
-	.payment-float-yape,
-	.payment-float-interbank {
-		right: -18px;
-	}
-
-	.payment-float-scotiabank {
-		left: 36%;
+	.payment-float-money,
+	.payment-float-card {
+		right: -12px;
 	}
 
 	.payment-orbit {
@@ -278,6 +302,7 @@ body > .container {
 }
 
 @media (prefers-reduced-motion: reduce) {
+	body,
 	.payment-bg-animation::before,
 	.payment-orbit,
 	.payment-dot,
