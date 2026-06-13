@@ -71,6 +71,221 @@ body {
 	font-family: 'Red Hat Display', sans-serif !important;
 }
 
+body > .container {
+	position: relative;
+	z-index: 2;
+}
+
+.payment-bg-animation {
+	position: fixed;
+	inset: 0;
+	z-index: 0;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.payment-bg-animation::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background:
+		radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.18), transparent 16%),
+		radial-gradient(circle at 78% 30%, rgba(181, 249, 72, 0.12), transparent 18%),
+		radial-gradient(circle at 50% 85%, rgba(255, 255, 255, 0.12), transparent 22%);
+	animation: paymentBgPulse 8s ease-in-out infinite;
+}
+
+.payment-orbit {
+	position: absolute;
+	border: 2px dashed rgba(255, 255, 255, 0.18);
+	border-radius: 50%;
+	transform: rotate(-18deg);
+	animation: paymentOrbit 18s linear infinite;
+}
+
+.payment-orbit-1 {
+	top: 8%;
+	left: -8%;
+	width: 340px;
+	height: 180px;
+}
+
+.payment-orbit-2 {
+	top: 24%;
+	right: -10%;
+	width: 460px;
+	height: 240px;
+	animation-duration: 24s;
+	animation-direction: reverse;
+}
+
+.payment-orbit-3 {
+	left: 20%;
+	bottom: 10%;
+	width: 520px;
+	height: 210px;
+	animation-duration: 28s;
+}
+
+.payment-dot {
+	position: absolute;
+	width: 12px;
+	height: 26px;
+	border-radius: 999px;
+	background: rgba(181, 249, 72, 0.55);
+	box-shadow: 0 0 20px rgba(181, 249, 72, 0.28);
+	animation: paymentDotFloat 5.6s ease-in-out infinite;
+}
+
+.payment-dot-1 {
+	top: 22%;
+	left: 7%;
+}
+
+.payment-dot-2 {
+	top: 54%;
+	right: 18%;
+	animation-delay: -1.8s;
+}
+
+.payment-dot-3 {
+	left: 64%;
+	bottom: 18%;
+	animation-delay: -3.1s;
+}
+
+.payment-float {
+	position: absolute;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: clamp(72px, 8vw, 112px);
+	height: clamp(54px, 6vw, 82px);
+	padding: 14px;
+	border-radius: 24px;
+	background: rgba(255, 255, 255, 0.9);
+	box-shadow: 0 18px 42px rgba(31, 57, 103, 0.25);
+	backdrop-filter: blur(4px);
+	animation: paymentIconFloat 7s ease-in-out infinite;
+	opacity: 0.88;
+}
+
+.payment-float img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+}
+
+.payment-float-bcp {
+	top: 14%;
+	left: 12%;
+}
+
+.payment-float-yape {
+	top: 20%;
+	right: 14%;
+	animation-delay: -1.4s;
+}
+
+.payment-float-bbva {
+	top: 48%;
+	left: 4%;
+	animation-delay: -2.5s;
+}
+
+.payment-float-interbank {
+	right: 8%;
+	bottom: 22%;
+	animation-delay: -3.7s;
+}
+
+.payment-float-scotiabank {
+	left: 42%;
+	bottom: 8%;
+	animation-delay: -4.8s;
+}
+
+@keyframes paymentBgPulse {
+	0%,
+	100% {
+		opacity: 0.72;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+@keyframes paymentOrbit {
+	0% {
+		transform: rotate(-18deg) translate3d(0, 0, 0);
+	}
+	50% {
+		transform: rotate(10deg) translate3d(18px, -12px, 0);
+	}
+	100% {
+		transform: rotate(-18deg) translate3d(0, 0, 0);
+	}
+}
+
+@keyframes paymentDotFloat {
+	0%,
+	100% {
+		transform: translateY(0) scale(1);
+		opacity: 0.56;
+	}
+	50% {
+		transform: translateY(-18px) scale(1.12);
+		opacity: 0.92;
+	}
+}
+
+@keyframes paymentIconFloat {
+	0%,
+	100% {
+		transform: translate3d(0, 0, 0) rotate(-2deg);
+	}
+	50% {
+		transform: translate3d(10px, -16px, 0) rotate(3deg);
+	}
+}
+
+@media (max-width: 767px) {
+	.payment-float {
+		width: 58px;
+		height: 44px;
+		padding: 10px;
+		border-radius: 16px;
+		opacity: 0.5;
+	}
+
+	.payment-float-bcp,
+	.payment-float-bbva {
+		left: -18px;
+	}
+
+	.payment-float-yape,
+	.payment-float-interbank {
+		right: -18px;
+	}
+
+	.payment-float-scotiabank {
+		left: 36%;
+	}
+
+	.payment-orbit {
+		opacity: 0.55;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.payment-bg-animation::before,
+	.payment-orbit,
+	.payment-dot,
+	.payment-float {
+		animation: none;
+	}
+}
+
 .bold {
 	font-weight: bold;
 }

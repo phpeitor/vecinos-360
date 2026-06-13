@@ -17,7 +17,7 @@ $(document).ready(function() {
 				'<p class="mb-4 text-muted">Este contenido es referencial para pruebas visuales del modal.</p>' +
 				sectionsHtml +
 				'<hr>' +
-				'<small class="text-muted">Version de prueba v0.1 - Ultima actualizacion: 22/03/2026</small>' +
+				'<small class="text-muted">Version de prueba v2.0</small>' +
 			'</div>'
 		);
 	}
