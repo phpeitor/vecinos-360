@@ -5,9 +5,9 @@
 
 Proyecto web estático para mostrar y gestionar opciones de pago en 360pay.
 
-<p align="center">
+<a href="https://www.instagram.com/amvsoft.tech/" align="center">
   <img src="./img/Logo360payPNG.png" alt="Logo 360pay" width="220" />
-</p>
+</a>
 
 <p align="center">
   <img src="./img/inka1.png" alt="Inka frame 1" width="140" />
