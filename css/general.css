@@ -430,32 +430,41 @@ body > .container {
 	pointer-events: none;
 }
 
-.inka-payment-ring {
-	inset: 16% 0 8% 14%;
-	border: 2px dashed rgba(239, 126, 35, 0.5);
-	border-left-color: rgba(72, 172, 193, 0.58);
-	border-bottom-color: transparent;
-	border-radius: 50%;
-	z-index: -1;
-	animation: inkaRingSpin 4.8s linear infinite;
-}
-
-.inka-motion-swipe {
-	top: 27%;
+.inka-atom {
 	left: 4%;
-	width: 78%;
-	height: 24%;
-	border-top: 3px solid rgba(255, 255, 255, 0.62);
-	border-radius: 50%;
-	filter: drop-shadow(0 0 8px rgba(72, 172, 193, 0.45));
-	transform: rotate(-18deg);
-	animation: inkaSwipe 2.4s ease-in-out infinite;
-	z-index: 2;
+	top: 9%;
+	width: 84%;
+	height: 76%;
+	z-index: 3;
+	animation: inkaAtomDrift 4.8s ease-in-out infinite;
 }
 
-.inka-coin-orbit {
-	top: 15%;
-	left: 18%;
+.inka-atom::before,
+.inka-atom::after {
+	content: "";
+	position: absolute;
+	left: 12%;
+	top: 25%;
+	width: 78%;
+	height: 46%;
+	border: 1px dashed rgba(239, 126, 35, 0.52);
+	border-radius: 50%;
+	filter: drop-shadow(0 0 8px rgba(239, 126, 35, 0.24));
+}
+
+.inka-atom::before {
+	transform: rotate(-28deg);
+}
+
+.inka-atom::after {
+	border-color: rgba(72, 172, 193, 0.5);
+	transform: rotate(34deg);
+}
+
+.inka-atom-orbit {
+	position: absolute;
+	left: 48%;
+	top: 45%;
 	width: 26px;
 	height: 26px;
 	display: inline-flex;
@@ -463,11 +472,37 @@ body > .container {
 	justify-content: center;
 	border-radius: 50%;
 	background: rgba(255, 255, 255, 0.86);
+	box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.12), 0 10px 18px rgba(31, 57, 103, 0.18);
+	font-size: 13px;
+	will-change: transform, opacity;
+}
+
+.inka-atom-orbit-1 {
 	color: #ef7e23;
-	font-size: 14px;
-	box-shadow: 0 0 0 7px rgba(239, 126, 35, 0.12), 58px 22px 0 -2px rgba(255, 255, 255, 0.78), 58px 22px 0 4px rgba(72, 172, 193, 0.12);
-	animation: inkaCoinOrbit 4.8s ease-in-out infinite;
-	z-index: 3;
+	animation: inkaAtomOrbit1 3.6s linear infinite;
+}
+
+.inka-atom-orbit-2 {
+	color: #48acc1;
+	animation: inkaAtomOrbit2 4.2s linear infinite;
+}
+
+.inka-atom-orbit-3 {
+	color: #26118f;
+	animation: inkaAtomOrbit3 4.8s linear infinite;
+}
+
+.inka-motion-swipe {
+	top: 27%;
+	left: 4%;
+	width: 78%;
+	height: 24%;
+	border-top: 2px solid rgba(255, 255, 255, 0.44);
+	border-radius: 50%;
+	filter: drop-shadow(0 0 8px rgba(72, 172, 193, 0.32));
+	transform: rotate(-18deg);
+	animation: inkaSwipe 2.4s ease-in-out infinite;
+	z-index: 2;
 }
 
 .inka-frame {
@@ -593,15 +628,51 @@ body > .container {
 	}
 }
 
-@keyframes inkaRingSpin {
+@keyframes inkaAtomDrift {
 	0%,
 	100% {
-		opacity: 0.24;
-		transform: rotate(-16deg) scale(0.92);
+		opacity: 0.72;
+		transform: translate3d(-3px, 4px, 0) rotate(-2deg) scale(0.94);
 	}
 	50% {
-		opacity: 0.58;
-		transform: rotate(20deg) scale(1.08);
+		opacity: 1;
+		transform: translate3d(5px, -5px, 0) rotate(2deg) scale(1.04);
+	}
+}
+
+@keyframes inkaAtomOrbit1 {
+	0% {
+		transform: rotate(0deg) translateX(64px) rotate(0deg) scale(0.86);
+	}
+	50% {
+		transform: rotate(180deg) translateX(64px) rotate(-180deg) scale(1.08);
+	}
+	100% {
+		transform: rotate(360deg) translateX(64px) rotate(-360deg) scale(0.86);
+	}
+}
+
+@keyframes inkaAtomOrbit2 {
+	0% {
+		transform: rotate(120deg) translateX(54px) rotate(-120deg) scale(0.8);
+	}
+	50% {
+		transform: rotate(300deg) translateX(54px) rotate(-300deg) scale(1.04);
+	}
+	100% {
+		transform: rotate(480deg) translateX(54px) rotate(-480deg) scale(0.8);
+	}
+}
+
+@keyframes inkaAtomOrbit3 {
+	0% {
+		transform: rotate(250deg) translateX(72px) rotate(-250deg) scale(0.74);
+	}
+	50% {
+		transform: rotate(70deg) translateX(72px) rotate(-70deg) scale(0.98);
+	}
+	100% {
+		transform: rotate(-110deg) translateX(72px) rotate(110deg) scale(0.74);
 	}
 }
 
@@ -615,22 +686,6 @@ body > .container {
 	68% {
 		opacity: 0.7;
 		transform: translate3d(16px, -8px, 0) rotate(-18deg) scaleX(1);
-	}
-}
-
-@keyframes inkaCoinOrbit {
-	0%,
-	100% {
-		opacity: 0.35;
-		transform: translate3d(0, 18px, 0) rotate(-18deg) scale(0.78);
-	}
-	38% {
-		opacity: 1;
-		transform: translate3d(70px, -8px, 0) rotate(14deg) scale(1);
-	}
-	72% {
-		opacity: 0.78;
-		transform: translate3d(34px, -38px, 0) rotate(32deg) scale(0.88);
 	}
 }
 
