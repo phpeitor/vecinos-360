@@ -2,12 +2,20 @@
 
 .legal-text {
 	background-color: transparent;
-	color: #1F3967;
+	color: rgba(255, 255, 255, 0.86);
 }
 
 .legal-text #terms-conditions-text, .legal-text #privacy-policy-text {
+	color: rgba(255, 255, 255, 0.92);
 	text-decoration: underline;
 	cursor: pointer;
+	transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.legal-text #terms-conditions-text:hover,
+.legal-text #privacy-policy-text:hover {
+	color: #b9ecff;
+	text-shadow: 0 0 12px rgba(185, 236, 255, 0.55);
 }
 
 .bg-blue {
