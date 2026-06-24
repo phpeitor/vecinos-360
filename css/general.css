@@ -426,35 +426,51 @@ body > .container {
 	position: fixed;
 	right: 16px;
 	bottom: 14px;
-	width: clamp(145px, 16vw, 210px);
-	height: clamp(145px, 16vw, 210px);
+	width: clamp(150px, 15vw, 205px);
+	height: clamp(150px, 15vw, 205px);
 	display: block;
 	z-index: 1000;
 	text-decoration: none;
 	transform-origin: 50% 88%;
-	transition: filter 0.2s ease;
-	animation: inkaStage 4.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-	filter: drop-shadow(0 18px 20px rgba(31, 57, 103, 0.24));
+	transition: filter 0.25s ease, transform 0.25s ease;
+	animation: inkaStage 7.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+	filter: drop-shadow(0 24px 28px rgba(15, 23, 42, 0.2));
 }
 
 .inka-animated-link:hover {
-	filter: drop-shadow(0 22px 24px rgba(31, 57, 103, 0.32)) saturate(1.08);
+	transform: translateY(-4px) scale(1.02);
+	filter: drop-shadow(0 30px 34px rgba(15, 23, 42, 0.28)) saturate(1.04);
 }
 
-.inka-animated-link::before {
+.inka-animated-link::before,
+.inka-animated-link::after {
 	content: "";
 	position: absolute;
 	pointer-events: none;
 }
 
 .inka-animated-link::before {
-	inset: 18% 4% 2% 10%;
+	inset: 18% 2% 4% 8%;
 	border-radius: 50%;
 	background:
-		radial-gradient(circle, rgba(239, 126, 35, 0.26), transparent 58%),
-		radial-gradient(circle at 70% 24%, rgba(72, 172, 193, 0.22), transparent 28%);
-	animation: inkaAura 2.4s ease-in-out infinite;
+		radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.18), transparent 52%),
+		radial-gradient(circle at 72% 36%, rgba(72, 172, 193, 0.18), transparent 30%),
+		radial-gradient(circle at 32% 70%, rgba(239, 126, 35, 0.18), transparent 34%);
+	filter: blur(2px);
+	animation: inkaAura 6.8s ease-in-out infinite;
 	z-index: -1;
+}
+
+.inka-animated-link::after {
+	left: 20%;
+	right: 8%;
+	bottom: 2%;
+	height: 18px;
+	border-radius: 50%;
+	background: radial-gradient(ellipse, rgba(15, 23, 42, 0.28), rgba(15, 23, 42, 0.08) 48%, transparent 72%);
+	filter: blur(4px);
+	animation: inkaGroundShadow 7.2s ease-in-out infinite;
+	z-index: -2;
 }
 
 .inka-effect {
@@ -463,77 +479,79 @@ body > .container {
 }
 
 .inka-atom {
-	left: 4%;
-	top: 9%;
-	width: 84%;
-	height: 76%;
-	z-index: 3;
-	animation: inkaAtomDrift 4.8s ease-in-out infinite;
+	left: 9%;
+	top: 16%;
+	width: 82%;
+	height: 72%;
+	z-index: 1;
+	animation: inkaAtomDrift 9s ease-in-out infinite;
+	opacity: 0.64;
 }
 
 .inka-atom::before,
 .inka-atom::after {
 	content: "";
 	position: absolute;
-	left: 12%;
-	top: 25%;
-	width: 78%;
-	height: 46%;
-	border: 1px dashed rgba(239, 126, 35, 0.52);
+	left: 9%;
+	top: 28%;
+	width: 80%;
+	height: 42%;
+	border: 1px solid rgba(255, 255, 255, 0.16);
 	border-radius: 50%;
-	filter: drop-shadow(0 0 8px rgba(239, 126, 35, 0.24));
+	filter: drop-shadow(0 0 10px rgba(185, 236, 255, 0.14));
 }
 
 .inka-atom::before {
-	transform: rotate(-28deg);
+	transform: rotate(-16deg);
 }
 
 .inka-atom::after {
-	border-color: rgba(72, 172, 193, 0.5);
-	transform: rotate(34deg);
+	border-color: rgba(185, 236, 255, 0.18);
+	transform: rotate(18deg);
 }
 
 .inka-atom-orbit {
 	position: absolute;
 	left: 48%;
 	top: 45%;
-	width: 26px;
-	height: 26px;
+	width: 8px;
+	height: 8px;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	border-radius: 50%;
-	background: rgba(255, 255, 255, 0.86);
-	box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.12), 0 10px 18px rgba(31, 57, 103, 0.18);
-	font-size: 13px;
+	background: rgba(255, 255, 255, 0.72);
+	box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.06), 0 0 16px rgba(185, 236, 255, 0.28);
+	font-size: 0;
 	will-change: transform, opacity;
 }
 
+.inka-atom-orbit i {
+	display: none;
+}
+
 .inka-atom-orbit-1 {
-	color: #ef7e23;
-	animation: inkaAtomOrbit1 3.6s linear infinite;
+	animation: inkaAtomOrbit1 8s linear infinite;
 }
 
 .inka-atom-orbit-2 {
-	color: #48acc1;
-	animation: inkaAtomOrbit2 4.2s linear infinite;
+	animation: inkaAtomOrbit2 10s linear infinite;
 }
 
 .inka-atom-orbit-3 {
-	color: #26118f;
-	animation: inkaAtomOrbit3 4.8s linear infinite;
+	animation: inkaAtomOrbit3 12s linear infinite;
 }
 
 .inka-motion-swipe {
-	top: 27%;
-	left: 4%;
-	width: 78%;
-	height: 24%;
-	border-top: 2px solid rgba(255, 255, 255, 0.44);
+	top: 34%;
+	left: 15%;
+	width: 60%;
+	height: 18%;
+	border-top: 1px solid rgba(255, 255, 255, 0.28);
 	border-radius: 50%;
-	filter: drop-shadow(0 0 8px rgba(72, 172, 193, 0.32));
-	transform: rotate(-18deg);
-	animation: inkaSwipe 2.4s ease-in-out infinite;
+	filter: drop-shadow(0 0 8px rgba(185, 236, 255, 0.2));
+	transform: rotate(-12deg);
+	animation: inkaSwipe 5.6s ease-in-out infinite;
 	z-index: 2;
 }
 
@@ -550,28 +568,28 @@ body > .container {
 }
 
 .inka-frame-1 {
-	animation: inkaFrame1 4.8s steps(1, end) infinite;
+	animation: inkaFrame1 7.2s steps(1, end) infinite;
 }
 
 .inka-frame-2 {
-	animation: inkaFrame2 4.8s steps(1, end) infinite;
+	animation: inkaFrame2 7.2s steps(1, end) infinite;
 }
 
 .inka-frame-3 {
-	animation: inkaFrame3 4.8s steps(1, end) infinite;
+	animation: inkaFrame3 7.2s steps(1, end) infinite;
 }
 
 .inka-frame-4 {
-	animation: inkaFrame4 4.8s steps(1, end) infinite;
+	animation: inkaFrame4 7.2s steps(1, end) infinite;
 }
 
 @keyframes inkaFrame1 {
 	0%,
-	16% {
+	36% {
 		opacity: 1;
-		transform: translate3d(0, 2px, 0) scale(0.99) rotate(0deg);
+		transform: translate3d(0, 1px, 0) scale(0.995) rotate(0deg);
 	}
-	17%,
+	37%,
 	100% {
 		opacity: 0;
 	}
@@ -579,16 +597,16 @@ body > .container {
 
 @keyframes inkaFrame2 {
 	0%,
-	16% {
+	36% {
 		opacity: 0;
 	}
-	17%,
-	40% {
+	37%,
+	56% {
 		opacity: 1;
-		transform: translate3d(-4px, -6px, 0) scale(1.04) rotate(-2deg);
-		filter: saturate(1.12) brightness(1.03);
+		transform: translate3d(-2px, -3px, 0) scale(1.015) rotate(-0.8deg);
+		filter: saturate(1.04) brightness(1.02);
 	}
-	41%,
+	57%,
 	100% {
 		opacity: 0;
 	}
@@ -596,15 +614,15 @@ body > .container {
 
 @keyframes inkaFrame3 {
 	0%,
-	40% {
+	56% {
 		opacity: 0;
 	}
-	41%,
-	64% {
+	57%,
+	76% {
 		opacity: 1;
-		transform: translate3d(5px, -8px, 0) scale(1.06) rotate(2deg);
+		transform: translate3d(2px, -4px, 0) scale(1.025) rotate(0.8deg);
 	}
-	65%,
+	77%,
 	100% {
 		opacity: 0;
 	}
@@ -612,15 +630,15 @@ body > .container {
 
 @keyframes inkaFrame4 {
 	0%,
-	64% {
+	76% {
 		opacity: 0;
 	}
-	65%,
-	84% {
+	77%,
+	88% {
 		opacity: 1;
-		transform: translate3d(12px, -13px, 0) scale(1.16) rotate(4deg);
+		transform: translate3d(4px, -7px, 0) scale(1.045) rotate(1.4deg);
 	}
-	85%,
+	89%,
 	100% {
 		opacity: 0;
 	}
@@ -629,82 +647,91 @@ body > .container {
 @keyframes inkaStage {
 	0%,
 	100% {
-		transform: translate3d(0, 4px, 0) rotate(0deg) scale(0.98);
+		transform: translate3d(0, 2px, 0) rotate(0deg) scale(0.995);
 	}
-	12% {
-		transform: translate3d(-7px, -2px, 0) rotate(-2.2deg) scale(1.01);
+	22% {
+		transform: translate3d(-1px, -2px, 0) rotate(-0.5deg) scale(1.005);
 	}
-	34% {
-		transform: translate3d(4px, -10px, 0) rotate(2deg) scale(1.04);
+	48% {
+		transform: translate3d(1px, -5px, 0) rotate(0.4deg) scale(1.015);
 	}
-	58% {
-		transform: translate3d(-3px, -4px, 0) rotate(-1deg) scale(1.02);
+	72% {
+		transform: translate3d(-1px, -3px, 0) rotate(-0.3deg) scale(1.008);
 	}
-	76% {
-		transform: translate3d(8px, -14px, 0) rotate(3deg) scale(1.07);
-	}
-	90% {
-		transform: translate3d(0, 1px, 0) rotate(-0.6deg) scale(1);
+	88% {
+		transform: translate3d(0, -1px, 0) rotate(0deg) scale(1.002);
 	}
 }
 
 @keyframes inkaAura {
 	0%,
 	100% {
-		opacity: 0.28;
-		transform: scale(0.92);
+		opacity: 0.32;
+		transform: scale(0.96);
 	}
 	50% {
-		opacity: 0.52;
-		transform: scale(1.08);
+		opacity: 0.58;
+		transform: scale(1.05);
+	}
+}
+
+@keyframes inkaGroundShadow {
+	0%,
+	100% {
+		opacity: 0.56;
+		transform: scaleX(0.92);
+	}
+	50% {
+		opacity: 0.38;
+		transform: scaleX(1.05);
 	}
 }
 
 @keyframes inkaAtomDrift {
 	0%,
 	100% {
-		opacity: 0.72;
-		transform: translate3d(-3px, 4px, 0) rotate(-2deg) scale(0.94);
+		opacity: 0.46;
+		transform: translate3d(-1px, 2px, 0) rotate(-1deg) scale(0.96);
 	}
 	50% {
-		opacity: 1;
-		transform: translate3d(5px, -5px, 0) rotate(2deg) scale(1.04);
+		opacity: 0.72;
+		transform: translate3d(2px, -3px, 0) rotate(1deg) scale(1.02);
 	}
 }
 
 @keyframes inkaAtomOrbit1 {
 	0% {
-		transform: rotate(0deg) translateX(64px) rotate(0deg) scale(0.86);
+		transform: rotate(0deg) translateX(62px) rotate(0deg) scale(0.72);
 	}
 	50% {
-		transform: rotate(180deg) translateX(64px) rotate(-180deg) scale(1.08);
+		transform: rotate(180deg) translateX(62px) rotate(-180deg) scale(1);
 	}
 	100% {
-		transform: rotate(360deg) translateX(64px) rotate(-360deg) scale(0.86);
+		transform: rotate(360deg) translateX(62px) rotate(-360deg) scale(0.72);
 	}
 }
 
 @keyframes inkaAtomOrbit2 {
 	0% {
-		transform: rotate(120deg) translateX(54px) rotate(-120deg) scale(0.8);
+		transform: rotate(120deg) translateX(50px) rotate(-120deg) scale(0.68);
 	}
 	50% {
-		transform: rotate(300deg) translateX(54px) rotate(-300deg) scale(1.04);
+		transform: rotate(300deg) translateX(50px) rotate(-300deg) scale(0.94);
 	}
 	100% {
-		transform: rotate(480deg) translateX(54px) rotate(-480deg) scale(0.8);
+		transform: rotate(480deg) translateX(50px) rotate(-480deg) scale(0.68);
 	}
 }
 
 @keyframes inkaAtomOrbit3 {
 	0% {
-		transform: rotate(250deg) translateX(72px) rotate(-250deg) scale(0.74);
+		transform: rotate(250deg) translateX(68px) rotate(-250deg) scale(0.62);
 	}
 	50% {
-		transform: rotate(70deg) translateX(72px) rotate(-70deg) scale(0.98);
+		transform: rotate(70deg) translateX(68px) rotate(-70deg) scale(0.88);
 	}
 	100% {
-		transform: rotate(-110deg) translateX(72px) rotate(110deg) scale(0.74);
+		transform: rotate(-110deg) translateX(68px) rotate(110deg) scale(0.62);
 	}
 }
 
@@ -712,12 +739,12 @@ body > .container {
 	0%,
 	100% {
 		opacity: 0;
-		transform: translate3d(-18px, 18px, 0) rotate(-18deg) scaleX(0.52);
+		transform: translate3d(-12px, 10px, 0) rotate(-12deg) scaleX(0.48);
 	}
-	36%,
-	68% {
-		opacity: 0.7;
-		transform: translate3d(16px, -8px, 0) rotate(-18deg) scaleX(1);
+	42%,
+	64% {
+		opacity: 0.38;
+		transform: translate3d(12px, -5px, 0) rotate(-12deg) scaleX(1);
 	}
 }
 

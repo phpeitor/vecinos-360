@@ -96,7 +96,7 @@ http://127.0.0.1/vecinos-360/
 - Si se cambia una animación, revisar impacto sobre rendimiento y accesibilidad.
 - Para reglas frontend detalladas, revisar `FRONTEND_RULES.md`.
 
-## Checklist De QA
+## Checklist QA
 
 - `index.html` carga sin errores en consola.
 - El código de pago se muestra y puede copiarse.
