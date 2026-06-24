@@ -15,7 +15,7 @@ $(document).ready(function() {
 			'<div class="p-4 p-md-5" style="background:#ffffff; min-height:100%;">' +
 				'<h4 class="mb-3 text-blue font-weight-bold">' + title + '</h4>' +
 				'<p class="mb-4 text-muted">' + intro + '</p>' +
-				'<div class="alert alert-info py-2 mb-4" role="alert">Contenido de prueba para validacion visual y funcional del modal.</div>' +
+				'<div class="alert alert-info py-2 mb-4" role="alert">Contenido de prueba para validación visual y funcional del modal.</div>' +
 				sectionsHtml +
 				'<hr>' +
 				'<small class="text-muted">Ultima actualización: 24/06/2026</small>' +
@@ -27,16 +27,16 @@ $(document).ready(function() {
 		$("#iframeview").html(
 			renderLegalMockContent('Terminos y condiciones', 'Estos terminos regulan el uso de la plataforma Vecinos 360 y del servicio 360pay para realizar pagos digitales.', [
 				{
-					heading: '1. Aceptacion del servicio',
-					text: 'Al usar la plataforma, el usuario acepta estas condiciones y declara que la informacion registrada para el pago es correcta.'
+					heading: '1. Aceptación del servicio',
+					text: 'Al usar la plataforma, el usuario acepta estas condiciones y declara que la información registrada para el pago es correcta.'
 				},
 				{
-					heading: '2. Codigo de pago',
-					text: 'El codigo de pago es personal para la operacion mostrada. El usuario debe verificar el monto, moneda, empresa recaudadora y fecha de vencimiento antes de pagar.'
+					heading: '2. Código de pago',
+					text: 'El código de pago es personal para la operación mostrada. El usuario debe verificar el monto, moneda, empresa recaudadora y fecha de vencimiento antes de pagar.'
 				},
 				{
-					heading: '3. Confirmacion de operaciones',
-					text: 'Los pagos realizados por bancos, billeteras, agentes o bodegas pueden demorar en actualizarse segun el canal utilizado y sus horarios de procesamiento.'
+					heading: '3. Confirmación de operaciones',
+					text: 'Los pagos realizados por bancos, billeteras, agentes o bodegas pueden demorar en actualizarse según el canal utilizado y sus horarios de procesamiento.'
 				},
 				{
 					heading: '4. Comisiones y cargos',
@@ -59,15 +59,15 @@ $(document).ready(function() {
 				},
 				{
 					heading: '2. Finalidad del tratamiento',
-					text: 'La informacion se usaria para validar pagos, prevenir fraude, atender consultas, generar comprobantes y mejorar la experiencia del usuario.'
+					text: 'La información se usaria para validar pagos, prevenir fraude, atender consultas, generar comprobantes y mejorar la experiencia del usuario.'
 				},
 				{
 					heading: '3. Seguridad',
 					text: 'Los datos se almacenarian en entornos protegidos con controles de acceso, monitoreo y medidas razonables para evitar usos no autorizados.'
 				},
 				{
-					heading: '4. Conservacion de la informacion',
-					text: 'La informacion se conservaria durante el tiempo necesario para cumplir obligaciones operativas, contractuales, contables o legales.'
+					heading: '4. Conservación de la información',
+					text: 'La información se conservaria durante el tiempo necesario para cumplir obligaciones operativas, contractuales, contables o legales.'
 				},
 				{
 					heading: '5. Derechos del titular',

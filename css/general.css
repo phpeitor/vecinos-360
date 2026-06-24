@@ -95,52 +95,80 @@ body > .container {
 	position: absolute;
 	inset: 0;
 	background:
-		radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.14), transparent 16%),
-		radial-gradient(circle at 82% 30%, rgba(54, 184, 204, 0.16), transparent 18%),
-		radial-gradient(circle at 50% 85%, rgba(239, 126, 35, 0.16), transparent 22%);
-	animation: paymentBgPulse 8s ease-in-out infinite;
+		linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+		radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.12), transparent 18%),
+		radial-gradient(circle at 84% 32%, rgba(72, 172, 193, 0.12), transparent 20%),
+		radial-gradient(circle at 50% 86%, rgba(239, 126, 35, 0.12), transparent 24%);
+	background-size: 72px 72px, 72px 72px, auto, auto, auto;
+	animation: paymentBgPulse 10s ease-in-out infinite;
+	mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
 }
 
 .payment-orbit {
 	position: absolute;
-	border: 2px dashed rgba(255, 255, 255, 0.18);
+	border: 1px solid rgba(255, 255, 255, 0.18);
 	border-radius: 50%;
-	transform: rotate(-18deg);
-	animation: paymentOrbit 18s linear infinite;
+	box-shadow: inset 0 0 34px rgba(255, 255, 255, 0.04), 0 0 28px rgba(72, 172, 193, 0.08);
+	transform: rotate(-14deg);
+	animation: paymentOrbit 28s ease-in-out infinite;
+	opacity: 0.72;
+}
+
+.payment-orbit::before,
+.payment-orbit::after {
+	content: "";
+	position: absolute;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.72);
+	box-shadow: 0 0 14px rgba(185, 236, 255, 0.42);
+}
+
+.payment-orbit::before {
+	top: 18%;
+	left: 13%;
+}
+
+.payment-orbit::after {
+	right: 19%;
+	bottom: 15%;
 }
 
 .payment-orbit-1 {
-	top: 8%;
-	left: -8%;
-	width: 340px;
-	height: 180px;
+	top: 10%;
+	left: -6%;
+	width: 330px;
+	height: 168px;
 }
 
 .payment-orbit-2 {
-	top: 24%;
-	right: -10%;
-	width: 460px;
-	height: 240px;
-	animation-duration: 24s;
+	top: 25%;
+	right: -8%;
+	width: 430px;
+	height: 220px;
+	animation-duration: 34s;
 	animation-direction: reverse;
 }
 
 .payment-orbit-3 {
-	left: 20%;
-	bottom: 10%;
-	width: 520px;
-	height: 210px;
-	animation-duration: 28s;
+	left: 22%;
+	bottom: 8%;
+	width: 500px;
+	height: 198px;
+	animation-duration: 38s;
+	opacity: 0.48;
 }
 
 .payment-dot {
 	position: absolute;
-	width: 12px;
-	height: 26px;
+	width: 8px;
+	height: 8px;
 	border-radius: 999px;
-	background: rgba(72, 172, 193, 0.72);
-	box-shadow: 0 0 20px rgba(72, 172, 193, 0.32);
-	animation: paymentDotFloat 5.6s ease-in-out infinite;
+	background: rgba(218, 244, 255, 0.78);
+	box-shadow: 0 0 0 8px rgba(185, 236, 255, 0.08), 0 0 22px rgba(185, 236, 255, 0.34);
+	animation: paymentDotFloat 8s ease-in-out infinite;
 }
 
 .payment-dot-1 {
@@ -165,25 +193,25 @@ body > .container {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: clamp(38px, 4vw, 62px);
-	height: clamp(38px, 4vw, 62px);
-	border: 1px solid rgba(255, 255, 255, 0.36);
-	border-radius: 18px;
-	background: rgba(255, 255, 255, 0.48);
-	box-shadow: 0 10px 24px rgba(31, 57, 103, 0.16);
-	backdrop-filter: blur(4px);
-	animation: paymentIconFloat 7s ease-in-out infinite;
-	color: #ef7e23;
-	font-size: clamp(16px, 1.9vw, 27px);
-	opacity: 0.52;
+	width: clamp(42px, 4vw, 58px);
+	height: clamp(42px, 4vw, 58px);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	border-radius: 16px;
+	background: linear-gradient(145deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.08));
+	box-shadow: 0 18px 40px rgba(15, 23, 42, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+	backdrop-filter: blur(10px);
+	animation: paymentIconFloat 11s ease-in-out infinite;
+	color: rgba(255, 255, 255, 0.58);
+	font-size: clamp(15px, 1.5vw, 22px);
+	opacity: 0.42;
 }
 
 .payment-float::after {
 	content: "";
 	position: absolute;
-	inset: 5px;
-	border-radius: 13px;
-	border: 1px solid rgba(38, 17, 143, 0.08);
+	inset: 7px;
+	border-radius: 11px;
+	border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .payment-float i {
@@ -192,38 +220,38 @@ body > .container {
 }
 
 .payment-float-dollar {
-	top: 13%;
-	left: 22px;
+	top: 12%;
+	left: -6px;
 }
 
 .payment-float-money {
-	top: 27%;
-	right: 24px;
+	top: 30%;
+	right: -8px;
 	animation-delay: -1.4s;
 }
 
 .payment-float-coins {
-	top: 48%;
-	left: 18px;
+	top: 50%;
+	left: -10px;
 	animation-delay: -2.5s;
 }
 
 .payment-float-card {
-	right: 20px;
-	bottom: 30%;
+	right: -6px;
+	bottom: 32%;
 	animation-delay: -3.7s;
 }
 
 .payment-float-wallet {
-	left: 28px;
-	bottom: 10%;
+	left: -4px;
+	bottom: 11%;
 	animation-delay: -4.8s;
-	color: #26118f;
+	color: rgba(255, 255, 255, 0.52);
 }
 
 .payment-float-money,
 .payment-float-card {
-	color: #48acc1;
+	color: rgba(185, 236, 255, 0.58);
 }
 
 @keyframes adminioGradientMove {
@@ -248,13 +276,13 @@ body > .container {
 
 @keyframes paymentOrbit {
 	0% {
-		transform: rotate(-18deg) translate3d(0, 0, 0);
+		transform: rotate(-14deg) translate3d(0, 0, 0);
 	}
 	50% {
-		transform: rotate(10deg) translate3d(18px, -12px, 0);
+		transform: rotate(2deg) translate3d(10px, -8px, 0);
 	}
 	100% {
-		transform: rotate(-18deg) translate3d(0, 0, 0);
+		transform: rotate(-14deg) translate3d(0, 0, 0);
 	}
 }
 
@@ -262,21 +290,21 @@ body > .container {
 	0%,
 	100% {
 		transform: translateY(0) scale(1);
-		opacity: 0.56;
+		opacity: 0.46;
 	}
 	50% {
-		transform: translateY(-18px) scale(1.12);
-		opacity: 0.92;
+		transform: translateY(-14px) scale(1.18);
+		opacity: 0.86;
 	}
 }
 
 @keyframes paymentIconFloat {
 	0%,
 	100% {
-		transform: translate3d(0, 0, 0) rotate(-2deg);
+		transform: translate3d(0, 0, 0) rotate(-1deg);
 	}
 	50% {
-		transform: translate3d(10px, -16px, 0) rotate(3deg);
+		transform: translate3d(8px, -12px, 0) rotate(2deg);
 	}
 }
 
