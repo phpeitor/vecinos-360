@@ -22,6 +22,23 @@ $(document).ready(function () {
     }, 350);
   });
 
+  $(".inka-animated-link").on("click", function (e) {
+    if (e.ctrlKey || e.metaKey || e.shiftKey || e.which === 2) {
+      return;
+    }
+
+    e.preventDefault();
+
+    var link = this;
+    var $link = $(link);
+    $link.addClass("inka-clicked");
+    $link.find(".inka-mascot-bubble").text("Te llevo al inicio");
+
+    setTimeout(function () {
+      window.location.href = link.href;
+    }, 520);
+  });
+
   $("#btn-yape").click(function (e) {
     $("#btn-yape").addClass("active");
     $("#btn-tambo").removeClass("active");
