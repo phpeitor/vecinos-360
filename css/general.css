@@ -63,6 +63,10 @@
 }
 
 body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	overflow-x: hidden;
 	color: #878787;
 	background: linear-gradient(120deg, #d45f08 0%, #9b3d4f 48%, #26118f 100%);
