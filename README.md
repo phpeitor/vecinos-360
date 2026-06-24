@@ -16,7 +16,7 @@ Proyecto web estático para mostrar y gestionar opciones de pago en 360pay.
 
 `Adminio360` es una landing estática para mostrar instrucciones de pago de 360pay. La vista concentra datos del servicio, canales disponibles, pasos por banco, textos legales y una capa visual de marca con animaciones livianas.
 
-El proyecto está pensado para publicarse como contenido estático en Apache, Nginx o cualquier hosting compatible con HTML/CSS/JS sin build step.
+El proyecto está pensado para publicarse como contenido estático en cualquier servidor o hosting compatible con HTML/CSS/JS sin build step.
 
 ## Stack Técnico
 
@@ -36,7 +36,7 @@ git clone https://github.com/phpeitor/vecinos-360.git
 cd vecinos-360
 ```
 
-2. Servir el directorio desde Apache/Nginx o abrir `index.html` directamente.
+2. Servir el directorio con el servidor local o remoto de tu preferencia, o abrir `index.html` directamente.
 
 ```text
 http://127.0.0.1/vecinos-360/
@@ -44,7 +44,7 @@ http://127.0.0.1/vecinos-360/
 
 3. Si no ves cambios recientes de CSS o JS, recarga ignorando caché con `Ctrl + F5`.
 
-## Estructura Del Proyecto
+## Estructura Proyecto
 
 ```text
 .
@@ -71,7 +71,7 @@ http://127.0.0.1/vecinos-360/
 └── webfonts/                 # Fuentes usadas por FontAwesome
 ```
 
-## Arquitectura De UI
+## Arquitectura UI
 
 - `index.html` mantiene la composición general: fondo, tarjeta principal, canales, instrucciones, footer legal y modal.
 - `css/general.css` concentra el diseño visual principal, incluyendo fondo, tarjeta, responsive, personaje Inka y microinteracciones.
@@ -116,7 +116,7 @@ http://127.0.0.1/vecinos-360/
 - Las animaciones no generan saltos visuales ni gaps entre frames.
 - Mobile conserva legibilidad y navegación sin overlays invasivos.
 
-## Convenciones De Desarrollo
+## Convenciones Desarrollo
 
 - Preferir cambios pequeños, localizados y fáciles de revisar.
 - Mantener HTML semántico cuando se agreguen bloques nuevos.
@@ -125,7 +125,7 @@ http://127.0.0.1/vecinos-360/
 - Separar cambios visuales, funcionales y de contenido cuando sea posible.
 - Mantener compatibilidad con el stack actual: HTML estático, CSS, Bootstrap y jQuery.
 
-## Notas De Producto
+## Notas Producto
 
 - El contenido legal actual es de prueba y debe reemplazarse por textos aprobados antes de producción.
 - Los canales visibles dependen de los botones habilitados en `index.html` y de sus bloques de instrucciones asociados.
